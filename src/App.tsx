@@ -2,54 +2,24 @@ import { useEffect, useState } from 'react'
 import { Route, Switch, useHistory, useLocation } from 'react-router-dom'
 import guestRoutes from './routes/guest'
 import './App.css'
-import getSocket from './api/socket';
-import { setApprovedPos } from './store/sms/actions'
 import { useDispatch } from 'react-redux'
 //@ts-ignore
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-import Layout from './pages/Layout';
 //@ts-ignore
-import { AnimatedSwitch } from 'react-router-transition';
 import Splash from './components/Splash/Splash';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap'
 
 const App = (props: any) => {
   const routes = guestRoutes;
-  const webSocket = getSocket();
   const history = useHistory();
   const dispatch = useDispatch();
-  const [isSplash, setIsSplash] = useState(true);
-  useEffect(() => {
-    document.title = 'Safe Locate';
-    webSocket.onmessage = (event: any) => {
-      const msg = JSON.parse(event.data);
-      console.log('Received message from server: ', msg);
-      switch (msg.type) {
-        case 'UPDATE_POS':
-          dispatch(setApprovedPos({ approvedPos: msg.approvedPos, phonenumber: msg.phonenumber }));
-          console.log('updated_pos: ', msg.approvedPos)
-          history.push('/display');
-          break;
-        case 'SET_SOCKETID':
-          if (msg.id) {
-            webSocket.id = msg.id;
-          }
-          break;
-        default:
-          break;
-      }
-    }
-    setTimeout(() => {
-      setIsSplash(false);
-    }, 3000);
-
-    return () => {
-      webSocket.close();
-    }
-  }, []);
+  const [isSplash, setIsSplash] = useState(false);
+  
   const location = useLocation();
   const routingComponent = (
-    <Layout>
+    <Container className="custom-container">
       <Switch
 
         location={location}
@@ -65,7 +35,7 @@ const App = (props: any) => {
           )
         })}
       </Switch>
-    </Layout>
+    </Container>
   )
 
   const handleNotification = (type: "success" | "warning" | "info" | "error", title: string, msg: string) => {

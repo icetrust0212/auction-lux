@@ -1,0 +1,52 @@
+.auction-view-home-container .top-row {
+  padding: 20px 0;
+  height: 350px;
+}
+
+.auction-view-home-container .top-row .main-product-view {
+  margin: 15px 0 !important;
+  height: 100%;
+  padding-left: 25px;
+}
+
+.auction-view-home-container .top-row .main-product-view img {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.auction-view-home-container .top-row .main-product-detail {
+  padding: 0 35px;
+}
+
+.auction-view-home-container .bottom-row {
+  padding: 10px 0;
+  height: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.auction-view-home-container .bottom-row .carosuel-item {
+  width: 0px;
+  height: 100%;
+}
+
+.auction-view-home-container .bottom-row .carosuel-item img {
+  height: 80px;
+  width: 160px;
+  width: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.auction-view-home-container .social-row .social-wrapper {
+  margin-left: auto;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-right: 50px;
+}
+/*# sourceMappingURL=auctionViewHome.css.map */

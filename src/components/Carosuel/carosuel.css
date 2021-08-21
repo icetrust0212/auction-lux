@@ -1,0 +1,29 @@
+.react-multi-carousel-list {
+  height: 100%;
+  padding: 0 80px;
+}
+
+.react-multi-carousel-list .btn, .react-multi-carousel-list .btn:focus {
+  background: white;
+  position: absolute;
+  font-size: 24px;
+  outline: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  height: 100%;
+  border-radius: 0 !important;
+}
+
+.react-multi-carousel-list .btn:hover, .react-multi-carousel-list .btn:focus:hover {
+  color: var(--primary-color) !important;
+}
+
+.react-multi-carousel-list .btn.btn-left, .react-multi-carousel-list .btn:focus.btn-left {
+  left: 0px;
+}
+
+.react-multi-carousel-list .btn.btn-right, .react-multi-carousel-list .btn:focus.btn-right {
+  right: 0px;
+}
+/*# sourceMappingURL=carosuel.css.map */

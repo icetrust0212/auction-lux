@@ -1,0 +1,14 @@
+.navbar-center {
+  margin-left: 50px;
+  margin-right: auto;
+}
+
+.header-navItem {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.navbar-nav a:hover {
+  color: var(--primary-color) !important;
+}
+/*# sourceMappingURL=pageHeader.css.map */

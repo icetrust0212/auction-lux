@@ -1,0 +1,18 @@
+.wrapper {
+  text-align: left;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 50px;
+  .upcomming-auctions-layout {
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .title {
+      margin: 0 auto;
+      text-align: center;
+      font-weight: 400;
+    }
+  }
+}
