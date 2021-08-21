@@ -6,10 +6,9 @@ import Carosuel from "../Carosuel/Carosuel";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import './auctionViewHome.css';
 //@ts-ignore
-import CountdownTimer from "react-component-countdown-timer";
+import Countdown from 'react-countdown';
 
-
-const AuctionViewHome = ({item}: PropsType) => {
+const AuctionViewHome = ({ item }: PropsType) => {
   return (
     <div className="auction-view-home-container">
       <Row className="top-row">
@@ -19,11 +18,11 @@ const AuctionViewHome = ({item}: PropsType) => {
         <Col md={4} className="main-product-detail d-flex-column justify-content-between align-items-between">
           <p>
             <label className="description color-dark size-middle capitalize">{'Time Remaining:'}</label>
-            <div className="d-flex flex-row">
-              {<CountdownTimer count={calcRemainingTime(item.start_time, item.end_time)} border showTitle noPoints />}
-            </div>
+            <h3 className="size-extremely-large color-primary">
+              {<Countdown date={item.end_time} />}
+            </h3>
           </p>
-          <p className="description size-medium color-dark capitalize">highest bidder: <br/><span className="color-primary size-middle uppercase">{item.highest_bidder}</span> with <span className="color-primary size-middle">{item.bid_count} entries</span> </p>
+          <p className="description size-medium color-dark capitalize">highest bidder: <br /><span className="color-primary size-middle uppercase">{item.highest_bidder}</span> with <span className="color-primary size-middle">{item.bid_count} entries</span> </p>
           <p className="color-dark size-medium text-bold capitalize">
             <strong>whildcard:</strong> <span className="d-line-block pe-2 wildcard br-dark-1 color-primary size-middle">${item.wild_card}</span>
             {' '}<strong>Lux<sup>2</sup></strong>{' '}<span className="color-primary size-middle">${item.lux}</span>
@@ -52,7 +51,7 @@ const AuctionViewHome = ({item}: PropsType) => {
             {
               item.images.map(img => (
                 <div className="carosuel-item">
-                 <img src={img.src} key={img.id}/>
+                  <img src={img.src} key={img.id} />
                 </div>
               ))
             }
@@ -61,9 +60,9 @@ const AuctionViewHome = ({item}: PropsType) => {
       </Row>
       <Row className="social-row mt-3">
         <div className="d-flex social-wrapper">
-          <ChatSquareDotsFill color='var(--text-color-lighter)' size={24} style={{marginRight: "12px"}}/>
-          <BellFill color='var(--text-color-light)' size={24} style={{marginRight: "12px"}}/>
-          <Share color='var(--text-color-light)'size={24} style={{marginRight: "12px"}}/>
+          <ChatSquareDotsFill color='var(--text-color-lighter)' size={24} style={{ marginRight: "12px" }} />
+          <BellFill color='var(--text-color-light)' size={24} style={{ marginRight: "12px" }} />
+          <Share color='var(--text-color-light)' size={24} style={{ marginRight: "12px" }} />
         </div>
       </Row>
     </div>

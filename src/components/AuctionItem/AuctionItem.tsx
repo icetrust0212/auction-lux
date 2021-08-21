@@ -3,6 +3,7 @@ import { BellFill, ChatSquareDotsFill, Share } from "react-bootstrap-icons";
 import { AuctionProduct, AuctionState } from "../../static/interfaces/AuctionProduct";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import './auctionItem.css';
+import Countdown from 'react-countdown';
 
 const AuctionItem = ({item}: PropsType) => {
     return (
@@ -29,7 +30,9 @@ const AuctionItem = ({item}: PropsType) => {
                         ) : (
                             <>
                                 <label htmlFor="" className="color-black header size-medium text-start">Time Remaining: </label>
-                                <h4 className="size-large color-primary">{item.start_time}</h4>
+                                <h3 className="size-extremely-large color-primary">
+                                  {<Countdown date={item.end_time} />}
+                                </h3>
                                 <p className="description size-medium color-dark capitalize">highest bidder: <br/><span className="color-primary size-middle uppercase">{item.highest_bidder}</span> with <span className="color-primary size-middle">{item.bid_count} entries</span> </p>
                             </>
                         )
