@@ -15,28 +15,34 @@ const CustomRightArrow = ({ onClick }: CustomLeftArrowProps) => {
   return <button className="btn btn-right color-light" onClick={() => onClick ? onClick() : ''}><ChevronRight /></button>
 }
 
-const responsive = {
-  superLargeDesktop: {
-    // the naming can be any, depends on you.
-    breakpoint: { max: 4000, min: 3000 },
-    items: 5
-  },
-  desktop: {
-    breakpoint: { max: 3000, min: 1024 },
-    items: 4
-  },
-  tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3
-  },
-  mobile: {
-    breakpoint: { max: 464, min: 0 },
-    items: 1
-  }
-};
 const Carosuel = (props: PropsType) => {
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: props.itemCount ? props.itemCount : 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: props.itemCount ? props.itemCount : 4
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: props.itemCount ? props.itemCount : 3
+
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: props.itemCount ? props.itemCount : 1
+    }
+  };
   return (
-    <Carousel responsive={responsive} customLeftArrow={<CustomLeftArrow />} customRightArrow={<CustomRightArrow />}>
+    <Carousel 
+      responsive={responsive} 
+      customLeftArrow={<CustomLeftArrow />} 
+      customRightArrow={<CustomRightArrow />}
+      autoPlay={true}
+    >
       {props.children}
     </Carousel>
   )
@@ -46,6 +52,7 @@ interface ArrowPropsType {
 }
 interface PropsType {
   children?: any,
-  customRightArrow?: any
+  customRightArrow?: any,
+  itemCount?: number;
 }
 export default Carosuel;

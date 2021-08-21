@@ -5,15 +5,23 @@ import { calcRemainingTime } from "../../utils/utils";
 import Carosuel from "../Carosuel/Carosuel";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import './auctionViewHome.css';
-//@ts-ignore
 import Countdown from 'react-countdown';
+//@ts-ignore
+import {Magnifier,GlassMagnifier,MOUSE_ACTIVATION,TOUCH_ACTIVATION} from "react-image-magnifiers";
 
 const AuctionViewHome = ({ item }: PropsType) => {
+
   return (
     <div className="auction-view-home-container">
       <Row className="top-row">
         <Col md={8} className="main-product-view br-light-1">
-          <img src={item.thumbnail} alt="products" />
+          <GlassMagnifier
+            className="magnifier-container"
+            imageSrc={item.thumbnail}
+            imageAlt="Example"
+            magnifierSize={'40%'}
+            largeImageSrc={item.thumbnail_big} // Optional
+          />
         </Col>
         <Col md={4} className="main-product-detail d-flex-column justify-content-between align-items-between">
           <p>

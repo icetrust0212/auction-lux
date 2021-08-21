@@ -9,7 +9,16 @@
   padding-left: 25px;
 }
 
-.auction-view-home-container .top-row .main-product-view img {
+.auction-view-home-container .top-row .main-product-view .magnifier-container {
+  height: 100% !important;
+}
+
+.auction-view-home-container .top-row .main-product-view .magnifier-container img {
+  width: auto;
+  height: auto;
+}
+
+.auction-view-home-container .top-row .main-product-view .magnifier-container > img {
   width: 100%;
   height: 100%;
   padding: 20px;

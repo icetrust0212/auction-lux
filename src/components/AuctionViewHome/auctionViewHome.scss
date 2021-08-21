@@ -8,13 +8,21 @@
             height: 100%;
             padding-left: 25px;
 
-            img {
-                width: 100%;
-                height: 100%;
-                padding: 20px;
-                object-fit: cover;
+            .magnifier-container {
+                height: 100% !important;
+                img {
+                    width: auto;
+                    height: auto;
+                }
+                
+                &>img {
+                    width: 100%;
+                    height: 100%;
+                    padding: 20px;
+                    object-fit: cover;
+                }
+                
             }
-
         }
 
         .main-product-detail {

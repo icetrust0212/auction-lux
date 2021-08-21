@@ -1,6 +1,7 @@
 export interface AuctionProduct {
     id: number,
     thumbnail: string,
+    thumbnail_big?: string,
     title: string,
     max_retail_price: number,
     start_time?: string,
