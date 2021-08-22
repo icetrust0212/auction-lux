@@ -39,7 +39,7 @@
 }
 
 .auction-view-home-container .bottom-row .carosuel-item {
-  width: 0px;
+  width: 100%;
   height: 100%;
 }
 

@@ -11,4 +11,8 @@
 .navbar-nav a:hover {
   color: var(--primary-color) !important;
 }
+
+.navbar-auction {
+  padding-top: 20px !important;
+}
 /*# sourceMappingURL=pageHeader.css.map */

@@ -7,9 +7,9 @@
     .ad-auction-slot {
         position: absolute;
         right: 0px;
-        top: 0px;
-        width: 300px;
-        height: 130px;
+        top: 10px;
+        width: 220px;
+        height: 85px;
         z-index: 10000;
         .auction-slot-main {
             height: 100%;
@@ -28,21 +28,22 @@
         }
 
         .ad-auction-btn {
-            font-size: 8px !important;
+            font-size: 6px !important;
             padding: 0px;
-            height: 20px !important;
-            margin-top: 8px;
+            height: 13px !important;
+            margin-top: 3px;
             margin-bottom: 0 !important;
         }
 
         .ad-auction-title {
-            font-size: 14px
+            font-size: 8px;
+            margin: 1px!important;
         }
 
         ;
 
         .ad-description {
-            font-size: 12px;
+            font-size: 7px;
         }
 
         border: 1px solid var(--border-color-light);

@@ -26,4 +26,8 @@
 .react-multi-carousel-list .btn.btn-right, .react-multi-carousel-list .btn:focus.btn-right {
   right: 0px;
 }
+
+.react-multi-carousel-list img {
+  width: 90% !important;
+}
 /*# sourceMappingURL=carosuel.css.map */

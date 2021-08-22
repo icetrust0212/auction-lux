@@ -10,6 +10,7 @@ import 'react-notifications/lib/notifications.css';
 import Splash from './components/Splash/Splash';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap'
+import { RouteInterface } from './static/interfaces/RouteInterface'
 
 const App = (props: any) => {
   const routes = guestRoutes;
@@ -24,12 +25,12 @@ const App = (props: any) => {
 
         location={location}
       >
-        {routes.map((route: any, index: any) => {
+        {routes.map((route: RouteInterface, index: number) => {
           return (
             <Route
               key={index}
               path={route.path}
-              component={() => <route.component {...props} handleNotification={handleNotification} routes={routes} />}
+              component={() => <route.component {...props} handleNotification={handleNotification} routes={route.routes || []} />}
               exact={route.exact}
             />
           )

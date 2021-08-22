@@ -19,8 +19,8 @@ const AuctionViewHome = ({ item }: PropsType) => {
             className="magnifier-container"
             imageSrc={item.thumbnail}
             imageAlt="Example"
-            magnifierSize={'40%'}
-            largeImageSrc={item.thumbnail_big} // Optional
+            magnifierSize={'30%'}
+            largeImageSrc={item.thumbnail_big ? item.thumbnail_big : item.thumbnail} // Optional
           />
         </Col>
         <Col md={4} className="main-product-detail d-flex-column justify-content-between align-items-between">

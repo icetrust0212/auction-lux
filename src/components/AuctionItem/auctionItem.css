@@ -12,7 +12,7 @@
 }
 
 .auction-item .auction-detail {
-  padding: 20px;
+  padding: 10px 20px;
 }
 
 .auction-item .auction-detail .title {
@@ -24,6 +24,6 @@
 }
 
 .auction-item .auction-detail .social-wrapper {
-  margin-top: 20px;
+  margin-top: 5px;
 }
 /*# sourceMappingURL=auctionItem.css.map */

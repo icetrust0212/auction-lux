@@ -42,6 +42,8 @@ const Carosuel = (props: PropsType) => {
       customLeftArrow={<CustomLeftArrow />} 
       customRightArrow={<CustomRightArrow />}
       autoPlay={true}
+      autoPlaySpeed={1000}
+      infinite={true}
     >
       {props.children}
     </Carousel>

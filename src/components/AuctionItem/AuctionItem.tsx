@@ -23,17 +23,17 @@ const AuctionItem = ({item}: PropsType) => {
                     {
                         item.state === AuctionState.READY ? (
                             <>
-                                <label htmlFor="" className="color-black header size-medium text-start">Auction Starts: </label>
+                                <label htmlFor="" className="color-black header size-small text-start">Auction Starts: </label>
                                 <h4 className="size-large color-primary">{item.start_time}</h4>
                                 <p className="detail color-light size-extremely-small">This auction will automatically start when {item.buy_in_limit} buy ins activated</p>
                             </>
                         ) : (
                             <>
-                                <label htmlFor="" className="color-black header size-medium text-start">Time Remaining: </label>
-                                <h3 className="size-extremely-large color-primary">
+                                <label htmlFor="" className="color-black header size-small text-start">Time Remaining: </label>
+                                <h3 className="size-large color-primary">
                                   {<Countdown date={item.end_time} />}
                                 </h3>
-                                <p className="description size-medium color-dark capitalize">highest bidder: <br/><span className="color-primary size-middle uppercase">{item.highest_bidder}</span> with <span className="color-primary size-middle">{item.bid_count} entries</span> </p>
+                                <p className="description size-small color-dark capitalize">highest bidder: <br/><span className="color-primary size-middle uppercase">{item.highest_bidder}</span> with <span className="color-primary size-middle">{item.bid_count} entries</span> </p>
                             </>
                         )
                     }

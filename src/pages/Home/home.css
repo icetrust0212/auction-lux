@@ -4,7 +4,7 @@
   margin-top: 50px;
 }
 
-.wrapper .upcomming-auctions-layout {
+.wrapper .auctions-layout {
   padding: 20px;
   width: 100%;
   display: -webkit-box;
@@ -22,7 +22,7 @@
           align-items: center;
 }
 
-.wrapper .upcomming-auctions-layout .title {
+.wrapper .auctions-layout .title {
   margin: 0 auto;
   text-align: center;
   font-weight: 400;
