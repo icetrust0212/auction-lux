@@ -8,6 +8,7 @@ import './auctionViewHome.css';
 import Countdown from 'react-countdown';
 //@ts-ignore
 import {Magnifier,GlassMagnifier,MOUSE_ACTIVATION,TOUCH_ACTIVATION} from "react-image-magnifiers";
+import { Link } from "react-router-dom";
 
 const AuctionViewHome = ({ item }: PropsType) => {
 
@@ -68,9 +69,9 @@ const AuctionViewHome = ({ item }: PropsType) => {
       </Row>
       <Row className="social-row mt-3">
         <div className="d-flex social-wrapper">
-          <ChatSquareDotsFill color='var(--text-color-lighter)' size={24} style={{ marginRight: "12px" }} />
-          <BellFill color='var(--text-color-light)' size={24} style={{ marginRight: "12px" }} />
-          <Share color='var(--text-color-light)' size={24} style={{ marginRight: "12px" }} />
+          <Link to={'/comments'}><ChatSquareDotsFill color='var(--text-color-lighter)' size={24} style={{ marginRight: "12px" }} /></Link>
+          <Link to={'/bidders'}><BellFill color='var(--text-color-light)' size={24} style={{ marginRight: "12px" }} /></Link>
+          <Link to={'/share'}><Share color='var(--text-color-light)' size={24} style={{ marginRight: "12px" }} /></Link>
         </div>
       </Row>
     </div>

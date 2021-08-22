@@ -21,6 +21,7 @@ const Home = (props: PropTypes) => {
                 location={location}
               >
                 {props.routes? props.routes.map((route: RouteInterface, index: number) => {
+                  console.log('router: ', route.path)
                   return (
                     <Route
                       key={index}

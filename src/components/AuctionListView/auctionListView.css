@@ -12,6 +12,7 @@
   padding: 0px 10px !important;
   color: var(--text-color-light);
   cursor: pointer;
+  font-weight: 300;
 }
 
 .auction-view-header .list-group li.active {

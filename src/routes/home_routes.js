@@ -1,4 +1,7 @@
+import { Share } from "react-bootstrap-icons"
 import AuctionListView from "../components/AuctionListView/AuctionListView"
+import Bidders from "../components/Bidders/Bidders"
+import Comments from "../components/Comments/Comments"
 
 const routes = [
   {
@@ -8,17 +11,17 @@ const routes = [
   },
   {
     path: '/bidders',
-    component: AuctionListView,
+    component: Bidders,
     exact: true,
   },
   {
     path: '/comments',
-    component: AuctionListView,
+    component: Comments,
     exact: true,
   },
   {
     path: '/share',
-    component: AuctionListView,
+    component: Share,
     exact: true,
   },
 ]
