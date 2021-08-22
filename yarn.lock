@@ -5295,6 +5295,11 @@ file-entry-cache@^6.0.0:
   dependencies:
     flat-cache "^3.0.4"
 
+file-get-contents@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/file-get-contents/-/file-get-contents-1.0.0.tgz#54477bf8f83ba7d10e47c38bf171e89d2fc501ee"
+  integrity sha512-SkLmOoekyI9UpZ9i/kUVnMvntTO/lGfoLXRVc54JSKrJOU/jUdPwHXkdfK64d1HlXvNcZwSdlr2melO2PwvMGg==
+
 file-loader@6.1.1:
   version "6.1.1"
   resolved "https://registry.npmjs.org/file-loader/-/file-loader-6.1.1.tgz"
