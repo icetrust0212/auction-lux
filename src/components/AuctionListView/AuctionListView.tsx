@@ -24,7 +24,7 @@ const AuctionListView = (props: PropsType) => {
   const [currentAuctionState, setCurrentAuctionState] = useState(AuctionState.ACTIVE);
   return (
     <>
-      <div className="auction-view-header mt-5">
+      <div className="auction-view-header">
         <ul className="list-group list-group-horizontal">
           {auction_titles.map(item => {
             return (

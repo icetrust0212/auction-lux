@@ -16,6 +16,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.1.0",
     "connected-react-router": "^6.9.1",
+    "currency.js": "^2.0.4",
     "detect-port-alt": "^1.1.6",
     "dotenv-flow": "^3.2.0",
     "google-map-react": "^2.1.10",

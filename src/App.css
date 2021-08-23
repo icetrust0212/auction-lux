@@ -56,6 +56,7 @@
   --background-color: #f7f7f7;
   --primary: rgb(177, 120, 2);
   --primary-color: var(--primary);
+  --secondary-color: rgb(243, 1, 0);
   --text-color-dark: black;
   --text-color-light: rgb(149, 150, 154);
   --text-color-lighter: rgb(202, 203, 204);
@@ -84,6 +85,9 @@
 }
 .color-primary {
   color: var(--primary-color) !important;
+}
+.color-secondary {
+  color: var(--secondary-color) !important;
 }
 .color-dark {
   color: var(--text-color-dark) !important;

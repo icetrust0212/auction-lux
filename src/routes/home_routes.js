@@ -1,7 +1,7 @@
-import { Share } from "react-bootstrap-icons"
 import AuctionListView from "../components/AuctionListView/AuctionListView"
 import Bidders from "../components/Bidders/Bidders"
 import Comments from "../components/Comments/Comments"
+import Share from "../components/Share/Share"
 
 const routes = [
   {

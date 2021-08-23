@@ -4,12 +4,15 @@ import Layout from '../Layout';
 import AuctionViewHome from '../../components/AuctionViewHome/AuctionViewHome';
 import { Container } from 'react-bootstrap';
 import { products } from '../../static/products';
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch, useLocation, useRouteMatch } from 'react-router-dom';
 import { RouteInterface } from '../../static/interfaces/RouteInterface';
+import { useState } from 'react';
 
 const Home = (props: PropTypes) => {
   const dispatch = useDispatch();
   const location = useLocation();
+  const { url, path } = useRouteMatch();
+
   return (
     <Layout>
       <div className="wrapper">
@@ -20,17 +23,17 @@ const Home = (props: PropTypes) => {
               <Switch
                 location={location}
               >
-                {props.routes? props.routes.map((route: RouteInterface, index: number) => {
+                {props.routes ? props.routes.map((route: RouteInterface, index: number) => {
                   console.log('router: ', route.path)
                   return (
                     <Route
                       key={index}
-                      path={route.path}
+                      path={path + route.path}
                       component={() => <route.component {...props} routes={route.routes || []} />}
                       exact={route.exact}
                     />
                   )
-                }): ''}
+                }) : ''}
               </Switch>
             }
           </Container>

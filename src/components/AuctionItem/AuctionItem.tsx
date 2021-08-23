@@ -4,6 +4,7 @@ import { AuctionProduct, AuctionState } from "../../static/interfaces/AuctionPro
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import './auctionItem.css';
 import Countdown from 'react-countdown';
+import { getFormatedDate, getRegularCurrency } from "../../utils/utils";
 
 const AuctionItem = ({item}: PropsType) => {
     return (
@@ -14,7 +15,9 @@ const AuctionItem = ({item}: PropsType) => {
             <Col md={3} className="auction-detail d-flex">
                 <div className="d-flex flex-column justify-content-center align-items-center">
                     <label className="title size-medium color-primary text-start">{item.title}</label>
-                    <span className="price size-medium color-light mt-3 text-start">Max Retail Value: ${item.max_retail_price}</span>
+                    <span className="price size-medium color-light mt-3 text-start">
+                        Max Retail Value: {getRegularCurrency(item.max_retail_price)}
+                    </span>
                 </div>
                 <div className="br-light-el" style={{marginLeft: '20px'}}></div>
             </Col>
@@ -24,7 +27,7 @@ const AuctionItem = ({item}: PropsType) => {
                         item.state === AuctionState.READY ? (
                             <>
                                 <label htmlFor="" className="color-black header size-small text-start">Auction Starts: </label>
-                                <h4 className="size-large color-primary">{item.start_time}</h4>
+                                <h4 className="size-large color-primary">{getFormatedDate(item.start_time)}</h4>
                                 <p className="detail color-light size-extremely-small">This auction will automatically start when {item.buy_in_limit} buy ins activated</p>
                             </>
                         ) : (

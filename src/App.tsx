@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Route, Switch, useHistory, useLocation } from 'react-router-dom'
+import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom'
 import guestRoutes from './routes/guest'
 import './App.css'
 import { useDispatch } from 'react-redux'
@@ -17,7 +17,7 @@ const App = (props: any) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [isSplash, setIsSplash] = useState(false);
-  
+
   const location = useLocation();
   const routingComponent = (
     <Container className="custom-container">
@@ -32,7 +32,17 @@ const App = (props: any) => {
               path={route.path}
               component={() => <route.component {...props} handleNotification={handleNotification} routes={route.routes || []} />}
               exact={route.exact}
-            />
+            >
+              {
+              route.redirect && 
+                <Redirect
+                  to={{
+                    pathname: route.redirect,
+                  }}
+                />
+              }
+
+            </Route>
           )
         })}
       </Switch>
