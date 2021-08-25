@@ -2,4 +2,44 @@
     .title {
         font-weight: 300 !important;
     }
+    .comment-list {
+        margin-top: 80px;
+        .comment {
+            height: 100px;
+            width: 100%;
+            display: flex;
+            position: relative;
+            margin-bottom: 10px;
+            img {
+                border-radius: 50%;
+                overflow: hidden;
+                width: 100px;
+                height: 100px;
+                margin-right: 7px;
+                object-fit: cover;
+            }
+            label {
+                display: flex;
+                flex: 1;
+                padding: 10px 10px 10px 20px;
+                justify-content: start;
+                align-items: center;
+                border-top: 1px solid var(--border-color-light);
+                border-bottom: 1px solid var(--border-color-light);
+                border-right: 1px solid var(--border-color-light);
+            }
+            .tool-buttons {
+                position: absolute;
+                right: 15px;
+                bottom: 15px;
+                display: none;
+                width: 40px;
+                justify-content: space-between;
+                &.active {
+                    display: flex;
+                }
+            }
+
+        }
+    }
 }

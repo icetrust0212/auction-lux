@@ -1,4 +1,64 @@
 .comments-wrapper .title {
   font-weight: 300 !important;
 }
+
+.comments-wrapper .comment-list {
+  margin-top: 80px;
+}
+
+.comments-wrapper .comment-list .comment {
+  height: 100px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.comments-wrapper .comment-list .comment img {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 100px;
+  height: 100px;
+  margin-right: 7px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.comments-wrapper .comment-list .comment label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 10px 10px 10px 20px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-top: 1px solid var(--border-color-light);
+  border-bottom: 1px solid var(--border-color-light);
+  border-right: 1px solid var(--border-color-light);
+}
+
+.comments-wrapper .comment-list .comment .tool-buttons {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+  display: none;
+  width: 40px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.comments-wrapper .comment-list .comment .tool-buttons.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
 /*# sourceMappingURL=comments.css.map */

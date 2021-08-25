@@ -1,0 +1,14 @@
+.social-wrapper {
+    .title {
+        font-weight: 300 !important;
+    }
+    .social-list {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 15%;
+        .social-icon {
+            padding: 20px;
+            font-size: 80px;
+        }
+    }
+}

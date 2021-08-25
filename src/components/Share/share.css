@@ -1,1 +1,18 @@
-/* No CSS *//*# sourceMappingURL=share.css.map */
+.social-wrapper .title {
+  font-weight: 300 !important;
+}
+
+.social-wrapper .social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 0 15%;
+}
+
+.social-wrapper .social-list .social-icon {
+  padding: 20px;
+  font-size: 80px;
+}
+/*# sourceMappingURL=share.css.map */
