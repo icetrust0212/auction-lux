@@ -1,4 +1,5 @@
 import { Col, Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap"
+import { Link } from "react-router-dom";
 import { NavPanel } from "../../static/NavPanel";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import "./pageHeader.css";
@@ -33,12 +34,12 @@ const PageHeader = () => {
             {
               NavPanel.map(navItem => {
                 if (!navItem.subMenu || navItem.subMenu.length === 0) {
-                  return <Nav.Link href={navItem.href} key={navItem.id} className="header-navItem">{navItem.title}</Nav.Link>
+                  return <Link to={navItem.href} key={navItem.id} className="header-navItem color-light">{navItem.title}</Link>
                 } else {
                   return (
                     <NavDropdown title={navItem.title} id="collasible-nav-dropdown" key={navItem.id}>
                       {navItem.subMenu.map(subItem => {
-                        return <NavDropdown.Item href={subItem.href} key={subItem.id}>{subItem.title}</NavDropdown.Item>
+                        return <Link to={subItem.href} key={subItem.id} className="color-light">{subItem.title}</Link>
                       })}
                     </NavDropdown>)
                 }

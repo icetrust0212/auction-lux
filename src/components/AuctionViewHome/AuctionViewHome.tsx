@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Col, Container, OverlayTrigger, Popover, Row } from "react-bootstrap";
 import { BellFill, ChatDots, ChatSquareDotsFill, Share, ShareFill } from "react-bootstrap-icons";
 import { AuctionProduct } from "../../static/interfaces/AuctionProduct";
 import { calcRemainingTime, getRegularCurrency } from "../../utils/utils";
@@ -9,12 +9,15 @@ import Countdown from 'react-countdown';
 //@ts-ignore
 import { Magnifier, GlassMagnifier, MOUSE_ACTIVATION, TOUCH_ACTIVATION } from "react-image-magnifiers";
 import { Link, useLocation, useRouteMatch } from "react-router-dom";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const AuctionViewHome = ({ item }: PropsType) => {
   const { url, path, params } = useRouteMatch();
   const location = useLocation();
   const activeColor = 'var(--secondary-color)';
   const inActiveColor = 'var(--text-color-lighter)';
+
   return (
     <div className="auction-view-home-container">
       <Row className="top-row">
@@ -91,12 +94,27 @@ const AuctionViewHome = ({ item }: PropsType) => {
       <Row className="social-row">
         <div className="d-flex social-wrapper">
           <Link to={`${url}/comments`}><ChatSquareDotsFill color={location.pathname === `${url}/comments` ? activeColor : inActiveColor} size={24} style={{ marginRight: "12px" }} /></Link>
-          <Link to={`${url}/bidders`}><BellFill color={location.pathname === `${url}/bidders` ? activeColor : inActiveColor} size={24} style={{ marginRight: "12px" }} /></Link>
-          <Link to={`${url}/share`}><Share color={location.pathname === `${url}/share` ? activeColor : inActiveColor} size={24} style={{ marginRight: "12px" }} /></Link>
+          <Popup trigger={
+            <Link to={`${url}/bidders`}><BellFill color={location.pathname === `${url}/bidders` ? activeColor : inActiveColor} size={24} /></Link>
+          } position="bottom center"
+            closeOnEscape={true}
+            defaultOpen={false}
+            on="hover"
+            className="popup-content"
+          >
+            <h5 className="popup-title color-secondary size-extremely-small">Stay Updated?</h5>
+            <div className="d-flex justify-content-between px-3 color-dark popup-buttons">
+              <span className="alert-button">Yes</span>
+              <span className="alert-button">No</span>
+            </div>
+          </Popup>
+          <Link to={`${url}/share`}><Share color={location.pathname === `${url}/share` ? activeColor : inActiveColor} size={24} style={{ marginLeft: "12px" }} /></Link>
         </div>
       </Row>
     </div>
   )
+
+
 }
 
 interface PropsType {
