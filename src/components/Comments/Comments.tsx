@@ -33,7 +33,7 @@ const Comments = (props: PropsType) => {
     const [activeComment, setActiveComment] = useState(1);
     return (
         <div className="comments-wrapper">
-            <h2 className="title color-secondary size-extremely-large w-100 text-center mb-5">Comments</h2>
+            <h2 className="title color-secondary size-extremely-large w-100 text-center">Comments</h2>
             <CommentForm limit={60} />
             <ul className="list-unstyled comment-list">
                 {
@@ -41,9 +41,11 @@ const Comments = (props: PropsType) => {
                         return (
                             <li className="comment" onMouseOver={() => {
                                 setActiveComment(comment.id)
-                            }}>
+                            }}
+                                key={comment.id}
+                            >
                                 <img src={comment.avatar} alt="avatar" />
-                                <label className="size-medium color-light">{comment.comment}</label>
+                                <label className="content color-light">{comment.comment}</label>
                                 <div className={"tool-buttons" + (activeComment === comment.id ? ' active' : '')}>
                                     <Reply color="var(--text-color-light)" />
                                     <ChevronDown color="var(--text-color-light)" />

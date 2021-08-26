@@ -141,3 +141,46 @@ div.br-light-el {
 .w-45 {
   width: 45% !important;
 }
+.gray {
+  filter: grayscale(1);
+}
+.responsive-none {
+  display: visible !important;
+}
+.responsive-visible {
+  display: none !important;
+}
+@media screen and (max-width: 767px) {
+  :root {
+    --size-extremely-large: 28px;
+    --size-large: 20px;
+    --size-medium: 16px;
+    --size-small: 14px;
+    --size-extremely-small: 12px;
+    --size-tiny: 8px;
+  }
+  .custom-container {
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .container {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+  }
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+   
+  }
+  .row > * {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+  .responsive-none {
+    display: none !important;
+  }
+  .responsive-visible {
+    display: flex !important;
+  }
+
+}

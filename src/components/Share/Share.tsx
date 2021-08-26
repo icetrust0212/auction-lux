@@ -16,12 +16,13 @@ const Share = (props: PropsType) => {
     const [activeComment, setActiveComment] = useState(1);
     return (
         <div className="social-wrapper">
-            <h2 className="title color-secondary size-extremely-large w-100 text-center mb-5">Share Where?</h2>
+            <h2 className="title color-secondary size-extremely-large w-100 text-center">Share Where?</h2>
             <div className="social-list">
-            {socialIcons.map(socialIcon => {
+            {socialIcons.map((socialIcon, index) => {
                 return (
                     React.createElement(socialIcon, {
-                        className: " color-light social-icon"
+                        className: " color-light social-icon",
+                        key: index
                     })
                 )
             })}

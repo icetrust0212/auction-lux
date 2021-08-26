@@ -16,19 +16,19 @@ const AuctionProductCard = ({ item }: PropsType) => {
             <Card.Img variant="top" src={item.thumbnail} className="image"/>
             <Card.Body className="p-2">
                 <Row className="p-1 m-0">
-                    <Col md={8} className="p-0">
+                    <Col md={8} sm={8} lg={8} xs={8} className="p-0">
                         <Card.Text className="size-tiny color-dark m-0">Auction Start Goal: {item.buy_in_limit}</Card.Text>
                         <Card.Text className="size-tiny color-light m-0">Retail Value: {getRegularCurrency(item.max_retail_price)}</Card.Text>
                     </Col>
-                    <Col md={4} className="p-0 d-flex justify-content-end">
+                    <Col md={4} sm={4} lg={4} xs={4} className="p-0 d-flex justify-content-end">
                         <OnboardingButton className="size-tiny auction-btn">Buy-In</OnboardingButton>
                     </Col>
                 </Row>
                 <Row className="p-1 m-0">
-                    <Col md={8} className="p-0 description ">
+                    <Col md={8} sm={8} lg={8} xs={8} className="p-0 description ">
                         <Card.Text className="color-light size-tiny">{item.description}</Card.Text>
                     </Col>
-                    <Col md={4} className="d-flex p-0 justify-content-end" >
+                    <Col md={4} sm={4} lg={4} xs={4} className="d-flex p-0 justify-content-end" >
                         <Link to={`${url}/comments`}><ChatSquareDotsFill color={location.pathname === `${url}/comments` ? activeColor : inActiveColor} size={12} style={{ marginRight: "8px" }} /></Link>
                         <Link to={`${url}/bidders`}><BellFill color={location.pathname === `${url}/bidders` ? activeColor : inActiveColor} size={12} style={{ marginRight: "8px" }} /></Link>
                         <Link to={`${url}/share`}><Share color={location.pathname === `${url}/share` ? activeColor : inActiveColor} size={12} style={{ marginRight: "8px" }} /></Link>

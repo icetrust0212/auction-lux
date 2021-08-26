@@ -14,7 +14,12 @@ export interface AuctionProduct {
     state: AuctionState,
     buy_in_limit: number,
     current_buy_in: number,
-    images: SubItem[]
+    images: SubItem[],
+    winner?: {
+        avatar : string | undefined,
+        name: string,
+        point: number,
+    }
 }
 interface SubItem {
     id: number,

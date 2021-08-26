@@ -12,7 +12,26 @@
   color: var(--primary-color) !important;
 }
 
+.logo {
+  width: 120px;
+}
+
 .navbar-auction {
   padding-top: 20px !important;
+}
+
+@media screen and (max-width: 767px) {
+  .navbar-nav a {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    text-align: end;
+    padding-right: 10px;
+  }
+  .navbar-auction {
+    padding-top: 0px !important;
+  }
+  .logo {
+    width: 80px;
+  }
 }
 /*# sourceMappingURL=pageHeader.css.map */

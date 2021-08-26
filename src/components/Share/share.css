@@ -1,5 +1,6 @@
 .social-wrapper .title {
   font-weight: 300 !important;
+  margin-bottom: 50px !important;
 }
 
 .social-wrapper .social-list {
@@ -14,5 +15,26 @@
 .social-wrapper .social-list .social-icon {
   padding: 20px;
   font-size: 80px;
+}
+
+@media (max-width: 767px) {
+  .social-wrapper .title {
+    font-weight: 300 !important;
+    margin-bottom: 20px !important;
+  }
+  .social-wrapper .social-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    padding: 0 8px;
+  }
+  .social-wrapper .social-list .social-icon {
+    padding: 10px;
+    font-size: 60px;
+  }
 }
 /*# sourceMappingURL=share.css.map */

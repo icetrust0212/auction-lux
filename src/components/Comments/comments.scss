@@ -1,6 +1,7 @@
 .comments-wrapper {
     .title {
         font-weight: 300 !important;
+        margin-bottom: 50px;
     }
     .comment-list {
         margin-top: 80px;
@@ -39,8 +40,66 @@
                 &.active {
                     display: flex;
                 }
+                background-color: white;
+            }
+            .content {
+                font-size: 18px;
             }
 
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .comments-wrapper {
+        .title {
+            margin-bottom: 20px;
+        }
+        .comment-list {
+            margin-top: 20px;
+            .comment {
+                height: 70px;
+                width: 100%;
+                display: flex;
+                position: relative;
+                margin-bottom: 10px;
+                cursor: pointer;
+                img {
+                    border-radius: 50%;
+                    overflow: hidden;
+                    width: 70px;
+                    height: 70px;
+                    margin-right: 3px;
+                    object-fit: cover;
+                }
+                label {
+                    display: flex;
+                    flex: 1;
+                    padding: 10px 10px 10px 20px;
+                    justify-content: start;
+                    align-items: center;
+                    border-top: 1px solid var(--border-color-light);
+                    border-bottom: 1px solid var(--border-color-light);
+                    border-right: 1px solid var(--border-color-light);
+                }
+                .tool-buttons {
+                    position: absolute;
+                    right: 5px;
+                    bottom: 5px;
+                    display: none;
+                    width: 40px;
+                    justify-content: space-between;
+                    &.active {
+                        display: flex;
+                    }
+                    background-color: white;
+                }
+
+                .content {
+                    font-size: 14px;
+                }
+    
+            }
         }
     }
 }

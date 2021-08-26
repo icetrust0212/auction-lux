@@ -5,13 +5,26 @@ import "./pageHeader.css";
 const PageHeader = () => {
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" sticky="top" className="bg-white navbar-auction">
+      <Row className="ad-auction-slot d-flex justify-content-around">
+        <Col md={7} className="detail d-flex flex-column justify-content-center align-items-center auction-slot-main">
+          <img src="/assets/images/products/car.jpg" alt="car" className="ad-img-small" />
+          <h4 className="ad-auction-title color-primary uppercase">engagement rings</h4>
+          <span className="ad-description color-dark capitalize">when you know, you know</span>
+          <div style={{ width: "50%", marginRight: 'auto', marginLeft: 'auto' }}>
+            <OnboardingButton fill={true} className="ad-auction-btn">GET STARTED</OnboardingButton>
+          </div>
+        </Col>
+        <Col md={5} className="p-0 ad-img-wrapper">
+          <img src="/assets/images/products/tesla.jpg" alt="" className="side-img" />
+        </Col>
+      </Row>
+
       <Container>
         <Navbar.Brand href="#home">
           <img
             alt=""
             src="/assets/images/logo-golden.png"
-            width="120"
-            className="d-inline-block align-top"
+            className="d-inline-block align-top logo"
           />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -23,7 +36,7 @@ const PageHeader = () => {
                   return <Nav.Link href={navItem.href} key={navItem.id} className="header-navItem">{navItem.title}</Nav.Link>
                 } else {
                   return (
-                    <NavDropdown title={navItem.title} id="collasible-nav-dropdown">
+                    <NavDropdown title={navItem.title} id="collasible-nav-dropdown" key={navItem.id}>
                       {navItem.subMenu.map(subItem => {
                         return <NavDropdown.Item href={subItem.href} key={subItem.id}>{subItem.title}</NavDropdown.Item>
                       })}
@@ -34,19 +47,6 @@ const PageHeader = () => {
           </Nav>
         </Navbar.Collapse>
       </Container>
-      <Row className="ad-auction-slot d-flex justify-content-around">
-        <Col md={7} className="detail d-flex flex-column justify-content-center align-items-center auction-slot-main">
-          <img src="/assets/images/products/car.jpg" alt="car" className="ad-img-small" />
-          <h4 className="ad-auction-title color-primary uppercase">engagement rings</h4>
-          <span className="ad-description color-dark capitalize">when you know, you know</span>
-          <div style={{width: "50%", marginRight: 'auto', marginLeft: 'auto'}}>
-            <OnboardingButton fill={true} className="ad-auction-btn">GET STARTED</OnboardingButton>
-          </div>
-        </Col>
-        <Col md={5} className="p-0">
-          <img src="/assets/images/products/tesla.jpg" alt="" className="side-img" />
-        </Col>
-      </Row>
     </Navbar>
   )
 }

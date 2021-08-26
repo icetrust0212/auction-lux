@@ -28,4 +28,35 @@
   text-align: center;
   font-weight: 400;
 }
+
+@media (max-width: 767px) {
+  .wrapper {
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 10px;
+  }
+  .wrapper .auctions-layout {
+    padding: 5px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 30px;
+  }
+  .wrapper .auctions-layout .title {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 400;
+  }
+}
 /*# sourceMappingURL=home.css.map */

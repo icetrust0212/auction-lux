@@ -26,15 +26,16 @@
         .bid-count {
             margin-left: auto;
             height: 100%;
-            display: flex;
             justify-content: center;
             align-items: center;
             width: 20%;
+            display: flex;
         }
 
         .media-body {
             flex: 1;
             margin: 5px 0;
+            border-right: 1px solid var(--text-color-light);
         }
 
         .m-2 {
@@ -43,6 +44,10 @@
 
         .recent-win * {
             font-weight: 300 !important;
+            font-size: 14px;
+        }
+        .name {
+            border-right: 1px solid var(--border-color-light);
         }
     }
 }
@@ -53,5 +58,81 @@
     }
     .carousel-item-class {
         padding: 15px;
+    }
+    .title {
+        margin-bottom: 50px !important;
+        margin-top: 50px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .bidders-layout {
+        .title {
+            font-weight: 300 !important;
+        }
+        li {
+            height: 100px;
+            padding: 5px;
+            border: 1px solid var(--text-color-light);
+            position: relative;
+            * span {
+                display: inline-block;
+            }
+    
+            .avatar {
+                width: 75px;
+                height: 100%;
+                margin-right: 10px;
+                object-fit: cover;
+            }
+    
+            &.active {
+                box-shadow: 0px 0px 16px 1px var(--text-color-light);
+                border: 1px solid var(--text-color-dark);
+            }
+    
+            .bid-count {
+                border-radius: 50%;
+                background-color: var(--primary-color);
+                color: white;
+                padding: 5px;
+                right: 5px;
+                top: 5px;
+                position: absolute;
+                height: 20px;
+                width: 20px;
+            }
+    
+            .media-body {
+                flex: 1;
+                margin: 5px 0;
+                border: none ;
+            }
+    
+            .m-2 {
+                margin: 0.5rem;
+            }
+    
+            .recent-win * {
+                font-weight: 300 !important;
+                font-size: 10px;
+            }
+            .name {
+                border: none;
+            }
+    }
+    }
+    
+    .upcomming-auction-second {
+        .react-multi-carousel-list {
+            padding: 0 !important;
+        }
+        .carousel-item-class {
+            padding: 15px;
+        }
+        .title {
+            margin-bottom: 20px !important;
+            margin-top: 50px !important;
+        }
     }
 }

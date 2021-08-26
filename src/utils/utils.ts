@@ -1,5 +1,5 @@
 import currency from 'currency.js';
-import moment from 'moment';
+import { format, formatDistanceToNowStrict} from 'date-fns'
 
 export const calcRemainingTime = (start_time?: string, end_time?: string): number => {
   let start = start_time ?  new Date(start_time).getTime() : new Date().getTime();
@@ -11,7 +11,14 @@ export const getFormatedDate = (date: string | Date | undefined):string => {
   if (!date) {
     date = new Date();
   }
-  return moment(date).format('MMMM DD, YYYY');
+  return format(new Date(date), 'MM / dd / yy');
+}
+
+export const getDiff = (date: string | undefined) => {
+  if (!date) return '';
+
+  let result = formatDistanceToNowStrict(new Date(date), { roundingMethod: 'ceil', addSuffix:true});
+  return result;
 }
 
 export const getShortCurrency = (value: string | number) : string => {

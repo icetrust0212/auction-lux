@@ -23,4 +23,14 @@
 .auction-view-header .list-group li:not(:last-child) {
   border-right: 1px solid var(--border-color-light) !important;
 }
+
+.auction-view-content {
+  margin-top: 50px;
+}
+
+@media (max-width: 767px) {
+  .auction-view-content {
+    margin-top: 20px;
+  }
+}
 /*# sourceMappingURL=auctionListView.css.map */

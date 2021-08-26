@@ -9,14 +9,17 @@ const auction_titles = [
   {
     type:  AuctionState.DONE,
     title: 'past auctions',
+    short: 'past'
   },
   {
     type:  AuctionState.ACTIVE,
     title: 'active auctions',
+    short: 'active',
   },
   {
     type:  AuctionState.READY,
     title: 'upcoming auctions',
+    short: 'upcoming'
   }
 ];
 
@@ -25,23 +28,40 @@ const AuctionListView = (props: PropsType) => {
   return (
     <>
       <div className="auction-view-header">
-        <ul className="list-group list-group-horizontal">
-          {auction_titles.map(item => {
+        <ul className="list-group list-group-horizontal responsive-none">
+          {auction_titles.map((item, index) => {
             return (
               <li className={
                 "auction-header-item capitalize list-group-item size-extremely-large"
                  + (item.type === currentAuctionState ? ' active' : '')}
                  onClick={(e) => {
                    setCurrentAuctionState(item.type)
-                 }}>
+                 }}
+                 key={index}>
                    {item.title}
               </li>
             )
           })
           }
         </ul>
+        <ul className="list-group list-group-horizontal responsive-visible">
+          {auction_titles.map((item, index) => {
+            return (
+              <li className={
+                "auction-header-item capitalize list-group-item size-extremely-large"
+                 + (item.type === currentAuctionState ? ' active' : '')}
+                 onClick={(e) => {
+                   setCurrentAuctionState(item.type)
+                 }}
+                 key={index}>
+                   {item.short}
+              </li>
+            )
+          })
+          }
+        </ul>
       </div>
-      <div className="auction-view-content mt-5">
+      <div className="auction-view-content">
         <AuctionList items={products} />
       </div>
     </>

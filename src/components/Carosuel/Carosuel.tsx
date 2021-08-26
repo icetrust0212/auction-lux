@@ -33,7 +33,7 @@ const Carosuel = (props: PropsType) => {
     },
     mobile: {
       breakpoint: { max: 464, min: 0 },
-      items: props.itemCount ? props.itemCount : 1
+      items: props.mobileItemCount ? props.mobileItemCount : 4
     }
   };
   return (
@@ -61,6 +61,7 @@ interface PropsType {
   itemCount?: number;
   visibleControl?: boolean;
   autoPlay?: boolean;
-  itemClass?: string
+  itemClass?: string;
+  mobileItemCount?: number;
 }
 export default Carosuel;

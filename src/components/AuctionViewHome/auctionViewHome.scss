@@ -1,12 +1,13 @@
 .auction-view-home-container {
     .top-row {
-        padding: 20px 0;
+        padding: 0;
         height: 350px;
 
         .main-product-view {
             margin: 15px 0 !important;
             height: 100%;
             padding-left: 25px;
+            border-right: 1px solid var(--border-color-light);
 
             .magnifier-container {
                 height: 100% !important;
@@ -53,13 +54,80 @@
     }
 
     .social-row {
+        margin-top: 20px;
         .social-wrapper {
             margin-left: auto;
             width: fit-content;
             margin-right: 50px;
         }
     }
+}
 
-
-
+@media(max-width: 767px) {
+    .auction-view-home-container {
+        text-align: center;
+        .top-row {
+            padding: 0;
+            height: auto;
+    
+            .main-product-view {
+                margin: 0 !important;
+                height: 100%;
+                padding-left: 10px;
+                border-right: none;
+    
+                .magnifier-container {
+                    height: 100% !important;
+                    img {
+                        width: auto;
+                        height: auto;
+                    }
+                    
+                    &>img {
+                        width: 100%;
+                        height: 100%;
+                        padding: 5px;
+                        object-fit: cover;
+                    }
+                    
+                }
+            }
+    
+            .main-product-detail {
+                padding: 0 15px;
+            }
+        }
+    
+        .bottom-row {
+            padding: 5px 0;
+            height: auto;
+            align-items: center;
+            .carosuel-item {
+                width: 100%;
+                height: 100%;
+    
+                img {
+                    height: 40px;
+                    width: 100%;
+                    object-fit: cover;
+                }
+                cursor: grabbing;
+                border-radius: 4px;
+                overflow: hidden;
+            }
+            .carousel-item-class {
+                padding: 5px;
+            }
+        }
+    
+        .social-row {
+            margin-top: 5px;
+            .social-wrapper {
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+                justify-content: space-around;
+            }
+        }
+    }
 }
