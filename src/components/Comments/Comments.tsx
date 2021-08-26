@@ -39,7 +39,7 @@ const Comments = (props: PropsType) => {
                 {
                     commentList.map(comment => {
                         return (
-                            <li className="comment" onClick={() => {
+                            <li className="comment" onMouseOver={() => {
                                 setActiveComment(comment.id)
                             }}>
                                 <img src={comment.avatar} alt="avatar" />

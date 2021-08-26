@@ -8,7 +8,7 @@ interface CustomLeftArrowProps extends ArrowProps {
   myOwnStuff?: string;
 }
 const CustomLeftArrow = ({ onClick }: CustomLeftArrowProps) => {
-  
+
   return <button className="btn btn-left color-light" onClick={() => onClick ? onClick() : ''}><ChevronLeft /></button>
 }
 const CustomRightArrow = ({ onClick }: CustomLeftArrowProps) => {
@@ -37,13 +37,16 @@ const Carosuel = (props: PropsType) => {
     }
   };
   return (
-    <Carousel 
-      responsive={responsive} 
-      customLeftArrow={<CustomLeftArrow />} 
+
+    <Carousel
+      responsive={responsive}
+      customLeftArrow={<CustomLeftArrow />}
       customRightArrow={<CustomRightArrow />}
-      autoPlay={true}
+      autoPlay={props.autoPlay}
       autoPlaySpeed={1000}
       infinite={true}
+      arrows={props.visibleControl === false ? false : true}
+      itemClass={props.itemClass}
     >
       {props.children}
     </Carousel>
@@ -56,5 +59,8 @@ interface PropsType {
   children?: any,
   customRightArrow?: any,
   itemCount?: number;
+  visibleControl?: boolean;
+  autoPlay?: boolean;
+  itemClass?: string
 }
 export default Carosuel;

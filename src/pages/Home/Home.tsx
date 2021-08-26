@@ -18,7 +18,7 @@ const Home = (props: PropTypes) => {
       <div className="wrapper">
         <AuctionViewHome item={products[0]} />
         <div className="auctions-layout">
-          <Container>
+          <div className="w-100">
             {
               <Switch
                 location={location}
@@ -36,7 +36,7 @@ const Home = (props: PropTypes) => {
                 }) : ''}
               </Switch>
             }
-          </Container>
+          </div>
         </div>
       </div>
     </Layout>

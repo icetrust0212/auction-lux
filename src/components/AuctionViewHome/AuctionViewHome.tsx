@@ -59,7 +59,7 @@ const AuctionViewHome = ({ item }: PropsType) => {
         </Col>
 
         <Col md={8}>
-          <Carosuel>
+          <Carosuel autoPlay={true} itemClass="carousel-item-class">
             {
               item.images.map(img => (
                 <div className="carosuel-item">

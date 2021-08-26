@@ -67,6 +67,7 @@
   --size-medium: 18px;
   --size-small: 16px;
   --size-extremely-small: 14px;
+  --size-tiny: 10px;
 
   --border-color-dark: #c9c7c7;
   --border-color-light: #dbd9d9;
@@ -106,6 +107,9 @@
 }
 .size-extremely-small {
   font-size: var(--size-extremely-small) !important;
+}
+.size-tiny {
+  font-size: var(--size-tiny);
 }
 .capitalize {
   text-transform: capitalize;

@@ -1,6 +1,6 @@
 .react-multi-carousel-list {
   height: 100%;
-  padding: 0 80px;
+  padding: --padding;
 }
 
 .react-multi-carousel-list .btn, .react-multi-carousel-list .btn:focus {
@@ -25,9 +25,5 @@
 
 .react-multi-carousel-list .btn.btn-right, .react-multi-carousel-list .btn:focus.btn-right {
   right: 0px;
-}
-
-.react-multi-carousel-list img {
-  width: 90% !important;
 }
 /*# sourceMappingURL=carosuel.css.map */
