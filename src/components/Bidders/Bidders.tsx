@@ -22,8 +22,8 @@ const Bidders = (props: PropsType) => {
 
   return (
     <>
-      <div className="bidders-layout">
-        <h2 className="title color-secondary size-extremely-large w-100 text-center mb-5">Current Bidders</h2>
+      <div className="bidders-layout weight-light">
+        <h2 className="title color-secondary size-extremely-large w-100 text-center mb-5 weight-thin">Current Bidders</h2>
         <ul className="list-unstyled">
           {
             data.map(item => {
@@ -60,8 +60,8 @@ const Bidders = (props: PropsType) => {
 
         </ul>
       </div>
-      <div className="upcomming-auction-second">
-        <h2 className="title color-dark size-extremely-large w-100 text-center">Upcoming Auctions</h2>
+      <div className="upcomming-auction-second weight-light">
+        <h2 className="title color-dark size-extremely-large w-100 text-center weight-thin">Upcoming Auctions</h2>
         <Carosuel visibleControl={false} itemClass="carousel-item-class" mobileItemCount={1}>
           {
             products.map(product => {

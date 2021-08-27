@@ -6,10 +6,16 @@
     margin-left: 15px; 
     margin-right: 15px; 
 }
+.navbar-light .navbar-nav .nav-link {
+    color: var(--text-color-dark) !important;
+}
 .navbar-nav {
+    font-family: 'Aleron UltraLight';
+    font-weight: 200;
     a:hover {
         color: var(--primary-color) !important;
     }
+   
     a {
         display: flex;
         justify-content: center;
@@ -28,10 +34,17 @@
 @media screen and (max-width: 767px) {
     .navbar-nav {
         a {
-            margin-left: 0 !important;
-            margin-right: 0 !important;
+            margin-left: auto;
             text-align: end;
             padding-right: 10px;
+            justify-content: flex-end;
+        }
+        .dropdown {
+            padding-right: 10px;
+            margin-left: auto;
+            a {
+                margin-left: auto !important;
+            }
         }
     }
     .navbar-auction {
@@ -39,5 +52,9 @@
     }
     .logo {
         width: 80px
+    }
+    .navbar-light .navbar-nav .nav-link {
+        text-align: end;
+        margin-left: auto;
     }
 }

@@ -50,13 +50,13 @@ const AuctionViewHome = ({ item }: PropsType) => {
         </Row>
         <Col md={4} className="main-product-detail d-flex-column justify-content-between align-items-between">
           <p>
-            <label className="description color-dark size-middle capitalize">{'Time Remaining:'}</label>
+            <label className="description color-dark size-middle capitalize weight-light">{'Time Remaining:'}</label>
             <h3 className="size-extremely-large color-primary">
               {<Countdown date={item.end_time} />}
             </h3>
           </p>
-          <p className="description size-medium color-dark capitalize">highest bidder: <br /><span className="color-primary size-middle uppercase">{item.highest_bidder}</span> with <span className="color-primary size-middle">{item.bid_count} entries</span> </p>
-          <p className="color-dark size-medium text-bold capitalize">
+          <p className="description size-medium color-dark capitalize weight-light">highest bidder: <br /><span className="color-primary size-middle uppercase">{item.highest_bidder}</span> with <span className="color-primary size-middle">{item.bid_count} entries</span> </p>
+          <p className="color-dark size-medium text-bold capitalize weight-light">
             <strong>whildcard:</strong> <span className="d-line-block pe-2 wildcard br-dark-1 color-primary size-middle">{getRegularCurrency(item.wild_card)}</span>
             {' '}<strong>Lux<sup>2</sup></strong>{' '}<span className="color-primary size-middle">{getRegularCurrency(item.lux)}</span>
             <span className="size-extremely-small color-light responsive-none">Every entry drasitically increases your changes of winning . Number of entries is unlimited</span>

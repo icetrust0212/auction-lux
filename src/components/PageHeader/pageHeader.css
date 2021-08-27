@@ -8,6 +8,15 @@
   margin-right: 15px;
 }
 
+.navbar-light .navbar-nav .nav-link {
+  color: var(--text-color-dark) !important;
+}
+
+.navbar-nav {
+  font-family: 'Aleron UltraLight';
+  font-weight: 200;
+}
+
 .navbar-nav a:hover {
   color: var(--primary-color) !important;
 }
@@ -35,16 +44,29 @@
 
 @media screen and (max-width: 767px) {
   .navbar-nav a {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: auto;
     text-align: end;
     padding-right: 10px;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .navbar-nav .dropdown {
+    padding-right: 10px;
+    margin-left: auto;
+  }
+  .navbar-nav .dropdown a {
+    margin-left: auto !important;
   }
   .navbar-auction {
     padding-top: 0px !important;
   }
   .logo {
     width: 80px;
+  }
+  .navbar-light .navbar-nav .nav-link {
+    text-align: end;
+    margin-left: auto;
   }
 }
 /*# sourceMappingURL=pageHeader.css.map */

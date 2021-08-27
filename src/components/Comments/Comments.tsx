@@ -32,14 +32,14 @@ const commentList = [
 const Comments = (props: PropsType) => {
     const [activeComment, setActiveComment] = useState(1);
     return (
-        <div className="comments-wrapper">
-            <h2 className="title color-secondary size-extremely-large w-100 text-center">Comments</h2>
+        <div className="comments-wrapper weight-light">
+            <h2 className="title color-secondary size-extremely-large w-100 text-center weight-thin">Comments</h2>
             <CommentForm limit={60} />
             <ul className="list-unstyled comment-list">
                 {
                     commentList.map(comment => {
                         return (
-                            <li className="comment" onMouseOver={() => {
+                            <li className="comment weight-light" onMouseOver={() => {
                                 setActiveComment(comment.id)
                             }}
                                 key={comment.id}

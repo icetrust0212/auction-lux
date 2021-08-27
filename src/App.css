@@ -78,6 +78,9 @@
 .container {
   background: white;
 }
+body {
+  font-family: 'Aleron Regular' !important;
+}
 .custom-container {
   width: 75% !important;
 }
@@ -149,6 +152,26 @@ div.br-light-el {
 }
 .responsive-visible {
   display: none !important;
+}
+.weight-light {
+  font-weight: 300;
+  font-family: 'Aleron Light';
+}
+.weight-bold {
+  font-weight: bold;
+  font-family: 'Aleron Bold';
+}
+.weight-semibold {
+  font-weight: 600;
+  font-family: 'Aleron Semibold';
+}
+.weight-heavy {
+  font-weight: 900;
+  font-family: 'Aleron Heavy';
+}
+.weight-thin {
+  font-weight: 200;
+  font-family: 'Aleron Thin';
 }
 @media screen and (max-width: 767px) {
   :root {
