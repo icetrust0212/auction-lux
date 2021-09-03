@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Redirect, Route, Switch, useHistory, useLocation } from 'react-router-dom'
-import guestRoutes from './routes/guest'
+import {authRoutes, guestRoutes} from './routes';
 import './App.css'
 import { useDispatch } from 'react-redux'
 //@ts-ignore
@@ -11,18 +11,21 @@ import Splash from './components/Splash/Splash';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap'
 import { RouteInterface } from './static/interfaces/RouteInterface'
+import { useSelector } from 'react-redux'
+import { getLoggedInState } from './store/reducers'
 
 const App = (props: any) => {
-  const routes = guestRoutes;
   const history = useHistory();
   const dispatch = useDispatch();
   const [isSplash, setIsSplash] = useState(false);
+  const loggedInState = useSelector(state => getLoggedInState(state));
 
+  const routes = loggedInState  ? authRoutes : guestRoutes;
+  console.log ('App: ', loggedInState);
   const location = useLocation();
   const routingComponent = (
     <Container className="custom-container">
       <Switch
-
         location={location}
       >
         {routes.map((route: RouteInterface, index: number) => {

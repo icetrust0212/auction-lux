@@ -7,6 +7,9 @@ import reportWebVitals from './reportWebVitals';
 import buildStore from './store'
 import { Provider } from 'react-redux'
 import { ToastProvider } from 'react-toast-notifications';
+// setup fake backend
+import { configureFakeBackend } from './_helpers';
+configureFakeBackend();
 
 declare global {
   interface Window {
@@ -15,6 +18,8 @@ declare global {
 }
 
 const store = buildStore(null, window.REDUX_DATA || undefined)
+
+
 
 ReactDOM.render(
   // <React.StrictMode>

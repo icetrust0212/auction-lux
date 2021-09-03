@@ -1,7 +1,7 @@
 import { compose, createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 
-import createRootReducer from './reducers'
+import createRootReducer from './reducer';
 
 const identity = (v) => v
 
