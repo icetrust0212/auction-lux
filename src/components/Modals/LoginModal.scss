@@ -1,0 +1,211 @@
+.modalSize {
+
+  width: 600px;
+  border-radius: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+
+}
+
+.title-header{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .list-group {
+    li.list-group-item {
+      border: none !important;
+      padding: 0px 10px !important;
+      color: var(--text-color-light);
+      cursor: pointer;
+      font-weight: 300;
+    }
+
+    li.active {
+      font-weight: 400;
+      color: var(--text-color-dark) !important;
+      background: transparent !important;
+    }
+
+    li:not(:last-child) {
+      border-right: 1px solid var(--border-color-light) !important;
+    }
+  }
+}
+
+.signin-content {
+  margin-top: 100px;
+  input, input:focus {
+    width: 100%;
+    height: 30px;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #e2d9d9;
+    border-radius: 8px;
+  }
+
+  .title-label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #4e4d4d;
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .button-enter {
+    display: flex;
+    align-items: center;
+    padding-left: 40px;
+
+    button {
+      font-size: 12px;
+      color: white;
+      border-radius: 7px;
+      border: none;
+      font-weight: 100;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #CA0204;
+      height: 28px;
+    }
+  }
+
+  .button-wrapper {
+    margin-top: 100px;
+    margin-bottom: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    button {
+      font-size: 24px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 45%;
+      height: 50px;
+      border-radius: 10px;
+      background-color: white;
+      border: 1px solid #FCD6D6;
+    }
+  }
+}
+
+.signup-content {
+  padding: 0px 60px;
+  .userinfo-1 {
+    padding-bottom: 25px;
+    border-bottom: 1px solid var(--border-color-light);
+  }
+  .userinfo-2 {
+    padding: 25px 0px;
+    border-bottom: 1px solid var(--border-color-light);
+  }
+  .userinfo-3 {
+    padding: 25px 0px;
+  }
+  .dropdown-urls {
+    padding: 20px 0px;
+    border-top: 1px solid var(--border-color-light);
+    .caption {
+      padding-bottom: 50px;
+      .part1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        color: #8C8C8C;
+        font-weight: 400;
+      }
+      .part2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 15px;
+        font-weight: 500;
+      }
+    }
+  }
+  .footer {
+    margin-top: 40px;
+    .layer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .btn-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        .btn-entire {
+          font-size: 14px;
+          font-weight: 400;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 122px;
+          height: 33px;
+          border-radius: 5px;
+          background-color: white;
+          border: 2px solid #FCD6D6;
+        }
+      }
+    }
+
+    .footer-caption {
+      text-align: center;
+      color: #CD1918;
+      font-size: 10px;
+    }
+
+    .btn-winning {
+      font-size: 14px;
+      font-weight: 400;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      height: 33px;
+      border-radius: 5px;
+      background-color: #CA0302;
+      color: white;
+      border: none;
+    }
+    .short-label {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #BABABB;
+      font-size: 14px;
+    }
+
+  }
+  margin-top: 50px;
+  input, input:focus {
+    font-size: 12px;
+    padding: 0px 15px;
+    width: 210px;
+    height: 30px;
+    outline: none;
+    box-shadow: none;
+    border: 1px solid #e2d9d9;
+    border-radius: 8px;
+
+
+  }
+  ::placeholder {
+    opacity: 0.5; /* Firefox */
+  }
+  .title-label2 {
+    color: #4e4d4d;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .row:not(:last-child) {
+    margin-bottom: 15px;
+  }
+}
