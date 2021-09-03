@@ -32,7 +32,7 @@ const AuctionListView = (props: PropsType) => {
           {auction_titles.map((item, index) => {
             return (
               <li className={
-                "auction-header-item capitalize list-group-item size-extremely-large"
+                "auction-header-item capitalize list-group-item size-extremely-large weight-thin "
                  + (item.type === currentAuctionState ? ' active' : '')}
                  onClick={(e) => {
                    setCurrentAuctionState(item.type)
@@ -44,7 +44,7 @@ const AuctionListView = (props: PropsType) => {
           })
           }
         </ul>
-        <ul className="list-group list-group-horizontal responsive-visible">
+        <ul className="list-group list-group-horizontal responsive-visible weight-thin">
           {auction_titles.map((item, index) => {
             return (
               <li className={

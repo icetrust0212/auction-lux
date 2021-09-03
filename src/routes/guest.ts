@@ -1,19 +1,25 @@
 import { RouteInterface } from '../static/interfaces/RouteInterface';
 import Home from '../pages/Home/Home';
-import home_routes from './home_routes';
-import Test from '../components/Test';
-const routes:RouteInterface[] = [
+import LoginPage from '../pages/LoginPage/LoginPage';
+export const guestRoutes:RouteInterface[] = [
+  {
+    path: '/register',
+    redirect: '/login',
+    exact : true
+  },
+  {
+    path: '/login',
+    component: LoginPage,
+    exact: true
+  },
   {
     path: '/',
-    redirect: '/home',
-    exact:true
+    redirect: '/login',
+    exact: true,
   },
   {
     path: '/home',
-    component: Home,
-    routes: home_routes
+    redirect: '/login',
   }
-
 ]
 
-export default routes

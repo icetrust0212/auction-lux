@@ -1,6 +1,5 @@
 .wrapper {
   text-align: left;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin-top: 50px;
 }
 
@@ -32,7 +31,6 @@
 @media (max-width: 767px) {
   .wrapper {
     text-align: left;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 10px;
   }
   .wrapper .auctions-layout {

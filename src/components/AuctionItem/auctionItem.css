@@ -15,12 +15,7 @@
   padding: 10px 0 10px 20px;
 }
 
-.auction-item .auction-detail .title {
-  font-weight: 700;
-}
-
 .auction-item .auction-detail .price {
-  font-weight: 600;
   margin-top: 1rem;
 }
 
@@ -52,11 +47,7 @@
   .auction-item .auction-detail {
     padding: 10px 0 10px 20px;
   }
-  .auction-item .auction-detail .title {
-    font-weight: 700;
-  }
   .auction-item .auction-detail .price {
-    font-weight: 600;
     margin-top: 5px;
   }
   .auction-item .auction-detail .social-wrapper {

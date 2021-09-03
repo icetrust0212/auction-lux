@@ -5,7 +5,7 @@ import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import "./pageHeader.css";
 const PageHeader = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" variant="light" sticky="top" className="bg-white navbar-auction">
+    <Navbar collapseOnSelect expand="lg" variant="light" sticky="top" className="bg-white navbar-auction weight-light">
       <Row className="ad-auction-slot d-flex justify-content-around">
         <Col md={7} className="detail d-flex flex-column justify-content-center align-items-center auction-slot-main">
           <img src="/assets/images/products/car.jpg" alt="car" className="ad-img-small" />
@@ -34,12 +34,12 @@ const PageHeader = () => {
             {
               NavPanel.map(navItem => {
                 if (!navItem.subMenu || navItem.subMenu.length === 0) {
-                  return <Link to={navItem.href} key={navItem.id} className="header-navItem color-light">{navItem.title}</Link>
+                  return <Link to={navItem.href} key={navItem.id} className="header-navItem color-dark">{navItem.title}</Link>
                 } else {
                   return (
-                    <NavDropdown title={navItem.title} id="collasible-nav-dropdown" key={navItem.id}>
+                    <NavDropdown title={navItem.title} className="color-dark" id="collasible-nav-dropdown" key={navItem.id}>
                       {navItem.subMenu.map(subItem => {
-                        return <Link to={subItem.href} key={subItem.id} className="color-light">{subItem.title}</Link>
+                        return <Link to={subItem.href} key={subItem.id} className="color-dark">{subItem.title}</Link>
                       })}
                     </NavDropdown>)
                 }

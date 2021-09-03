@@ -15,8 +15,8 @@ const socialIcons = [
 const Share = (props: PropsType) => {
     const [activeComment, setActiveComment] = useState(1);
     return (
-        <div className="social-wrapper">
-            <h2 className="title color-secondary size-extremely-large w-100 text-center">Share Where?</h2>
+        <div className="social-wrapper weight-light">
+            <h2 className="title color-secondary size-extremely-large w-100 text-center weight-thin">Share Where?</h2>
             <div className="social-list">
             {socialIcons.map((socialIcon, index) => {
                 return (
