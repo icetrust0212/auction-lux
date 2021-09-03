@@ -1,5 +1,4 @@
 import Home from '../pages/Home/Home';
-import LoginPage from '../pages/LoginPage/LoginPage';
 import { RouteInterface } from '../static/interfaces/RouteInterface';
 import home_routes from './home_routes';
 

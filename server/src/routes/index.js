@@ -1,14 +1,10 @@
-const Router = require('express').Router
-const server = require('../services/express');
-const Controllers = require('../controllers')
-// const middlewares = require('./middlewares')
 
-const router = new Router()
+const authRouter = require('./auth.route');
+const userRouter = require('./user.route');
+const Router = require('express').Router;
+const router = new Router();
 
+router.use('/api/auth', authRouter);
+router.use('/api/test', userRouter);
 
-// ------------ guest routes -------------------------
-router.post('/api/send_request', Controllers.Sms.sendRequest)
-router.post('/api/send_location', Controllers.Sms.sendLocation )
-router.post('/api/send_share_request', Controllers.Sms.sendShareRequest )
-router.post('/api/send_contact_us', Controllers.Sms.sendContactUs);
-module.exports = router
+module.exports =  router;

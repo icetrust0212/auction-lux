@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'Aleron Regular';
+  src: url('../fonts/Aleron/AILERON-REGULAR.OTF');
+  src: local('Aleron Regular'), local('Aleron Regular'),
+      url('../fonts/Aleron/AILERON-REGULAR.OTF') format('embedded-opentype'),
+      url('../fonts/Aleron/AILERON-REGULAR.OTF') format('woff2'),
+      url('../fonts/Aleron/AILERON-REGULAR.OTF') format('woff'),
+      url('../fonts/Aleron/AILERON-REGULAR.OTF') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aleron Bold';
+  src: url('../fonts/Aleron/AILERON-BOLD.OTF');
+  src: local('Aleron Bold'), local('Aleron Bold'),
+      url('../fonts/Aleron/AILERON-BOLD.OTF') format('embedded-opentype'),
+      url('../fonts/Aleron/AILERON-BOLD.OTF') format('woff2'),
+      url('../fonts/Aleron/AILERON-BOLD.OTF') format('woff'),
+      url('../fonts/Aleron/AILERON-BOLD.OTF') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aleron Light';
+  src: url('../fonts/Aleron/AILERON-LIGHT.OTF');
+  src: local('Aleron Light'), local('Aleron Light'),
+      url('../fonts/Aleron/AILERON-LIGHT.OTF') format('embedded-opentype'),
+      url('../fonts/Aleron/AILERON-LIGHT.OTF') format('woff2'),
+      url('../fonts/Aleron/AILERON-LIGHT.OTF') format('woff'),
+      url('../fonts/Aleron/AILERON-LIGHT.OTF') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aleron Heavy';
+  src: url('../fonts/Aleron/AILERON-HEAVY.OTF');
+  src: local('Aleron Heavy'), local('Aleron Heavy'),
+      url('../fonts/Aleron/AILERON-HEAVY.OTF') format('embedded-opentype'),
+      url('../fonts/Aleron/AILERON-HEAVY.OTF') format('woff2'),
+      url('../fonts/Aleron/AILERON-HEAVY.OTF') format('woff'),
+      url('../fonts/Aleron/AILERON-HEAVY.OTF') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aleron Semibold';
+  src: url('../fonts/Aleron/AILERON-SEMIBOLD.OTF');
+  src: local('Aleron Semibold'), local('Aleron Semibold'),
+      url('../fonts/Aleron/AILERON-SEMIBOLD.OTF') format('embedded-opentype'),
+      url('../fonts/Aleron/AILERON-SEMIBOLD.OTF') format('woff2'),
+      url('../fonts/Aleron/AILERON-SEMIBOLD.OTF') format('woff'),
+      url('../fonts/Aleron/AILERON-SEMIBOLD.OTF') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aleron Thin';
+  src: url('../fonts/Aleron/AILERON-THIN.OTF');
+  src: local('Aleron Thin'), local('Aleron Thin'),
+      url('../fonts/Aleron/AILERON-THIN.OTF') format('embedded-opentype'),
+      url('../fonts/Aleron/AILERON-THIN.OTF') format('woff2'),
+      url('../fonts/Aleron/AILERON-THIN.OTF') format('woff'),
+      url('../fonts/Aleron/AILERON-THIN.OTF') format('truetype');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aleron UltraLight';
+  src: url('../fonts/Aleron/AILERON-ULTRALIGHT.OTF');
+  src: local('Aleron UltraLight'), local('Aleron UltraLight'),
+      url('../fonts/Aleron/AILERON-ULTRALIGHT.OTF') format('embedded-opentype'),
+      url('../fonts/Aleron/AILERON-ULTRALIGHT.OTF') format('woff2'),
+      url('../fonts/Aleron/AILERON-ULTRALIGHT.OTF') format('woff'),
+      url('../fonts/Aleron/AILERON-ULTRALIGHT.OTF') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
