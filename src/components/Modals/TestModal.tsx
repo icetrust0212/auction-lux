@@ -14,10 +14,12 @@ const TestModal = (props: PropTypes) => {
   return (
     <Modal
       {...props}
+      show = {props.show}
       aria-labelledby='contained-modal-title-vcenter'
       dialogClassName='modalSize'
       size='lg'
       centered
+
 
     >
       <Modal.Body>
@@ -400,6 +402,7 @@ const TestModal = (props: PropTypes) => {
 }
 
 interface PropTypes {
-  show?: boolean
+  show?: boolean,
+  onEscapeKeyDown: (data:boolean) => void;
 }
 export default TestModal
