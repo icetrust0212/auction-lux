@@ -52,3 +52,5 @@ function initial() {
     }
   });
 }
+
+module.exports = {db, initial};

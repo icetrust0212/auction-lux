@@ -34,6 +34,7 @@ const LoginPage = () => {
         
         if (username && password) {
             dispatch(userActions.login(username, password));
+            // dispatch(userActions.signUp(username, password));
         }
         setSubmitted(true);
     }
