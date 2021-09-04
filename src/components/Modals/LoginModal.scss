@@ -14,6 +14,7 @@
   justify-content: center;
 
   .list-group {
+
     li.list-group-item {
       border: none !important;
       padding: 0px 10px !important;
@@ -22,7 +23,7 @@
       font-weight: 300;
     }
 
-    li.active {
+    li.list-group-item.active {
       font-weight: 400;
       color: var(--text-color-dark) !important;
       background: transparent !important;
@@ -37,12 +38,16 @@
 .signin-content {
   margin-top: 100px;
   input, input:focus {
+    font-weight: 300;
+    font-size: 12px;
+    padding: 0px 15px;
     width: 100%;
     height: 30px;
     outline: none;
     box-shadow: none;
     border: 1px solid #e2d9d9;
     border-radius: 8px;
+
   }
 
   .title-label {
@@ -68,8 +73,16 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      border: 1px solid #CA0204;
       background-color: #CA0204;
+      transition: 0.5s;
       height: 28px;
+    }
+
+    button:hover{
+      border: 1px solid #CA0204;
+      background-color: white;
+      color: #CA0204;
     }
   }
 
@@ -90,6 +103,11 @@
       border-radius: 10px;
       background-color: white;
       border: 1px solid #FCD6D6;
+      transition: 0.5s;
+    }
+    button:hover {
+      background-color: #ec5959;
+      color: white;
     }
   }
 }
@@ -150,6 +168,11 @@
           border-radius: 5px;
           background-color: white;
           border: 2px solid #FCD6D6;
+          transition: 0.5s;
+        }
+        .btn-entire:hover {
+          background-color: #eb5f5f;
+          color: white;
         }
       }
     }
@@ -170,8 +193,15 @@
       height: 33px;
       border-radius: 5px;
       background-color: #CA0302;
+      transition: 0.5s;
       color: white;
       border: none;
+    }
+
+    .btn-winning:hover {
+      border: 1px solid #CA0302;;
+      background-color:white;
+      color: red;
     }
     .short-label {
       display: flex;
