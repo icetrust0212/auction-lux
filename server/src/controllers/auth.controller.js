@@ -13,6 +13,8 @@ exports.signup = (req, res) => {
         password: bcrypt.hashSync(req.body.password, 8)
     });
 
+    console.log('signup: ', user, req.body.username, req.body.email, req.body.password);
+
     user.save((err, user) => {
         if (err) {
             res.status(500).send({
@@ -80,6 +82,7 @@ exports.signup = (req, res) => {
 };
 
 exports.signin = (req, res) => {
+    console.log(User);
     User.findOne({
             username: req.body.username
         })

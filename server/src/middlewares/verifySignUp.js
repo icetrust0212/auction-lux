@@ -3,6 +3,7 @@ const ROLES = db.ROLES;
 const User = db.user;
 
 checkDuplicateUsernameOrEmail = (req, res, next) => {
+    console.log('signup middleware: ', req.body.username, req.body.password);
     // Username
     User.findOne({
         username: req.body.username
@@ -21,7 +22,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
             return;
         }
 
-        // Email
+        Email
         User.findOne({
             email: req.body.email
         }).exec((err, user) => {

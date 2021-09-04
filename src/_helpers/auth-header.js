@@ -8,3 +8,12 @@ export function authHeader() {
         return {};
     }
 }
+export const getToken = () => {
+    let user = JSON.parse(localStorage.getItem('user'));
+
+    if (user && user.token) {
+        return  user.token ;
+    } else {
+        return null;
+    }
+}
