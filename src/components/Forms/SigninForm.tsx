@@ -2,46 +2,47 @@ import { FormValidator } from '../common/Validation/formvalidation'
 //@ts-ignore
 import { Field, reduxForm } from 'redux-form'
 
-const renderField = ({ input, id, name, type, meta: { touched, error, warning } }: FieldPropsType) => (
-  <div className='col-md-6 msg-wrapper'>
-    <input {...input} id={id} name={name} type={type} />
-    {touched && ((error && <span className = "msg-valid">{error}</span>) || (warning && <span className='msg-valid'>{warning}</span>))}
-  </div>
-)
+import { useForm, SubmitHandler } from "react-hook-form";
+import { useDispatch } from 'react-redux';
+import { userActions } from '../../store/actions';
 
-const SigninForm = ({ handleSubmit, pristine, reset, submitting }: PropsType) => {
+type Inputs = {
+  username: string,
+  password: string,
+};
 
-  const onSubmit = (e: any) => {
-    if (handleSubmit) handleSubmit();
+
+const SigninForm = ({ pristine, reset, submitting }: PropsType) => {
+  const dispatch = useDispatch();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+
+  const onSubmit: SubmitHandler<Inputs> = data => {
+    dispatch(userActions.login(data.username, data.password));
   }
 
   return (
-    <form name='signin-form' onSubmit={onSubmit}>
+    <form name='signin-form' onSubmit={handleSubmit(onSubmit)}>
       <div className='signin-content'>
         <div className='row'>
           <div className='col-md-5 title-label'>
             <label>Username:</label>
           </div>
-          <Field
-            name='username'
-            id='username'
-            type='text'
-            component={renderField}
-            validate={[FormValidator.required]}
+          <input
+            {...register("username", { required: true })}
+            type="text"
           />
+          {errors.username?.type === 'required' && <span>username is required</span>}
         </div>
 
         <div className='row mt-5'>
           <div className='col-md-5 title-label'>
             <label>password:</label>
           </div>
-          <Field
-            name='password'
-            id='password'
+          <input
+            {...register("password", { required: true })}
             type='password'
-            component={renderField}
-            validate={[FormValidator.required]}
           />
+          {errors.password?.type === 'required' && <span>password is required</span>}
         </div>
         <div className='row button-wrapper'>
           <button type='submit'>Log in</button>
@@ -56,14 +57,6 @@ interface PropsType {
   pristine: boolean,
   reset: () => void,
   submitting: boolean
-}
-
-interface FieldPropsType {
-    input: any,
-    id: any,
-    name: any,
-    type: any,
-    meta: any
 }
 
 export default reduxForm({
