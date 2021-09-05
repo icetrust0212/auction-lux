@@ -2,21 +2,24 @@ import { FormValidator } from './formvalidation'
 //@ts-ignore
 import { Field, reduxForm } from 'redux-form'
 
-const renderField = (props: any) => (
+const renderField = ({ input, label, type, meta: { touched, error, warning } }: FieldPropsType) => (
   <div className='col-md-4'>
-    <input type={props.type} name={props.name} id={props.id} />
-    {props.touched &&
-      ((props.error && <span>{props.error}</span>) ||
-        (props.warning && <span>{props.warning}</span>))}
+    <label>{label}</label>
+    <div>
+      <input {...input} placeholder={label} type={type} />
+      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
+    </div>
   </div>
 )
 
-const SigninForm = () => {
-  const handleSubmit = () => {
+const SigninForm = ({ handleSubmit, pristine, reset, submitting }: PropsType) => {
+
+  const onSubmit = (e: any) => {
+    if (handleSubmit) handleSubmit();
   }
 
   return (
-    <form name='signin-form' onSubmit={handleSubmit}>
+    <form name='signin-form' onSubmit={onSubmit}>
       <div className='signin-content'>
         <div className='row'>
           <div className='col-md-4 title-label'>
@@ -56,6 +59,20 @@ const SigninForm = () => {
   )
 }
 
+interface PropsType {
+  handleSubmit: () => void,
+  pristine: boolean,
+  reset: () => void,
+  submitting: boolean
+}
+
+interface FieldPropsType {
+    input: any,
+    label: any,
+    type: any,
+    meta: any
+}
+
 export default reduxForm({
-  form: 'fieldLevelValidation', // a unique identifier for this form
+  form: 'signInForm', // a unique identifier for this form
 })(SigninForm)
