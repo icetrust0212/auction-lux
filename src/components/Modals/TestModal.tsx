@@ -4,8 +4,8 @@ import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './LoginModal.css'
 
-import SigninForm from './SigninForm'
-import SignupForm from './SignupForm'
+import SigninForm from '../Forms/SigninForm'
+import SignupForm from '../Forms/SignupForm'
 
 const TestModal = (props: PropTypes) => {
   const [activeState, setActiveState] = useState('signin')

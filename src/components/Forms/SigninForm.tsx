@@ -1,14 +1,11 @@
-import { FormValidator } from './formvalidation'
+import { FormValidator } from '../common/Validation/formvalidation'
 //@ts-ignore
 import { Field, reduxForm } from 'redux-form'
 
-const renderField = ({ input, label, type, meta: { touched, error, warning } }: FieldPropsType) => (
-  <div className='col-md-4'>
-    <label>{label}</label>
-    <div>
-      <input {...input} placeholder={label} type={type} />
-      {touched && ((error && <span>{error}</span>) || (warning && <span>{warning}</span>))}
-    </div>
+const renderField = ({ input, id, name, type, meta: { touched, error, warning } }: FieldPropsType) => (
+  <div className='col-md-6 msg-wrapper'>
+    <input {...input} id={id} name={name} type={type} />
+    {touched && ((error && <span className = "msg-valid">{error}</span>) || (warning && <span className='msg-valid'>{warning}</span>))}
   </div>
 )
 
@@ -22,7 +19,7 @@ const SigninForm = ({ handleSubmit, pristine, reset, submitting }: PropsType) =>
     <form name='signin-form' onSubmit={onSubmit}>
       <div className='signin-content'>
         <div className='row'>
-          <div className='col-md-4 title-label'>
+          <div className='col-md-5 title-label'>
             <label>Username:</label>
           </div>
           <Field
@@ -34,8 +31,8 @@ const SigninForm = ({ handleSubmit, pristine, reset, submitting }: PropsType) =>
           />
         </div>
 
-        <div className='row mt-4'>
-          <div className='col-md-4 title-label'>
+        <div className='row mt-5'>
+          <div className='col-md-5 title-label'>
             <label>password:</label>
           </div>
           <Field
@@ -63,7 +60,8 @@ interface PropsType {
 
 interface FieldPropsType {
     input: any,
-    label: any,
+    id: any,
+    name: any,
     type: any,
     meta: any
 }

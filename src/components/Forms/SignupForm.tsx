@@ -1,4 +1,4 @@
-import { FormValidator } from './formvalidation'
+import { FormValidator } from '../common/Validation/formvalidation'
 //@ts-ignore
 import { Field, reduxForm } from 'redux-form'
 import { PersonFill } from 'react-bootstrap-icons'
