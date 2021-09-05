@@ -1,8 +1,8 @@
 import { userConstants } from '../constants';
 
 let user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? { 
-  loggedIn: true, user, loggingIn: false 
+const initialState = user ? {
+  loggedIn: false, user, loggingIn: false
 } : {loggedIn: false, user: null, loggingIn: false};
 
 export function authentication(state = initialState, {type, payload}) {

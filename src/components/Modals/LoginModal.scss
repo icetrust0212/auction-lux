@@ -122,6 +122,17 @@
 .signup-content {
   padding: 0px 60px;
   .userinfo-1 {
+    .msg-wrapper {
+      position: relative;
+      .msg-valid {
+        color: #700;
+        font-size: 13px;
+        font-weight: 700;
+        position: absolute;
+        left: 20px;
+        top: 33px;
+      }
+    }
     padding-bottom: 25px;
     border-bottom: 1px solid var(--border-color-light);
   }
@@ -243,6 +254,6 @@
     justify-content: flex-end;
   }
   .row:not(:last-child) {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
   }
 }

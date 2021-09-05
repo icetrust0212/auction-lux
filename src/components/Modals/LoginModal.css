@@ -168,6 +168,19 @@
   border-bottom: 1px solid var(--border-color-light);
 }
 
+.signup-content .userinfo-1 .msg-wrapper {
+  position: relative;
+}
+
+.signup-content .userinfo-1 .msg-wrapper .msg-valid {
+  color: #700;
+  font-size: 13px;
+  font-weight: 700;
+  position: absolute;
+  left: 20px;
+  top: 33px;
+}
+
 .signup-content .userinfo-2 {
   padding: 25px 0px;
   border-bottom: 1px solid var(--border-color-light);
@@ -364,6 +377,6 @@
 }
 
 .signup-content .row:not(:last-child) {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 /*# sourceMappingURL=LoginModal.css.map */
