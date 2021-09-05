@@ -1,13 +1,18 @@
 import { Col, Container, Nav, Navbar, NavDropdown, Row } from "react-bootstrap"
+import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { userMenu, authMenu } from "../../static/NavPanel";
+import { modalActions } from "../../store/actions";
 import { getLoggedInState } from "../../store/reducers";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import "./pageHeader.css";
+
 const PageHeader = () => {
   const loggedIn = useSelector(state => getLoggedInState(state));
-  const navPanel = loggedIn ? authMenu : userMenu; 
+  const navPanel = loggedIn ? authMenu : userMenu;
+  const dispatch = useDispatch();
+
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" sticky="top" className="bg-white navbar-auction weight-light">
       <Row className="ad-auction-slot d-flex justify-content-around">
@@ -38,7 +43,13 @@ const PageHeader = () => {
             {
               navPanel.map(navItem => {
                 if (!navItem.subMenu || navItem.subMenu.length === 0) {
-                  return <Link to={navItem.href} key={navItem.id} className="header-navItem color-dark">{navItem.title}</Link>
+                  if (navItem.href !== '/login') {
+                    return <Link to={navItem.href} key={navItem.id} className="header-navItem color-dark">{navItem.title}</Link>
+                  } else {
+                    return <a className="header-navItem color-dark" onClick={() => {
+                      dispatch(modalActions.showLoginModal());
+                    }}>{navItem.title}</a>
+                  }
                 } else {
                   return (
                     <NavDropdown title={navItem.title} className="color-dark" id="collasible-nav-dropdown" key={navItem.id}>
