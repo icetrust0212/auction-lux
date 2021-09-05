@@ -38,17 +38,30 @@
   margin-top: 100px;
 }
 
-.signin-content input, .signin-content input:focus {
+.signin-content .msg-wrapper {
+  position: relative;
+}
+
+.signin-content .msg-wrapper input, .signin-content .msg-wrapper input:focus {
   font-weight: 300;
-  font-size: 12px;
+  font-size: 14px;
   padding: 0px 15px;
-  width: 100%;
+  width: 200px;
   height: 30px;
   outline: none;
   -webkit-box-shadow: none;
           box-shadow: none;
   border: 1px solid #e2d9d9;
   border-radius: 8px;
+}
+
+.signin-content .msg-wrapper .msg-valid {
+  color: #700;
+  font-size: 13px;
+  font-weight: 700;
+  position: absolute;
+  left: 20px;
+  top: 40px;
 }
 
 .signin-content .title-label {
@@ -58,12 +71,13 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   color: #4e4d4d;
-  font-size: 12px;
+  font-size: 13px;
   text-align: center;
+  padding-right: 40px;
 }
 
 .signin-content .button-enter {
