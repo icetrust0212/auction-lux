@@ -27,22 +27,29 @@ const SigninForm = ({ pristine, reset, submitting }: PropsType) => {
           <div className='col-md-5 title-label'>
             <label>Username:</label>
           </div>
-          <input
-            {...register("username", { required: true })}
-            type="text"
-          />
-          {errors.username?.type === 'required' && <span>username is required</span>}
+          <div className="col-md-7 msg-wrapper">
+            <input
+              {...register("username", { required: true })}
+              type="text"
+            />
+            {errors.username?.type === 'required' && <span className="msg-valid">username is required</span>}
+          </div>
+
         </div>
 
         <div className='row mt-5'>
           <div className='col-md-5 title-label'>
             <label>password:</label>
           </div>
-          <input
-            {...register("password", { required: true })}
-            type='password'
-          />
-          {errors.password?.type === 'required' && <span>password is required</span>}
+
+          <div className="col-md-7 msg-wrapper">
+            <input
+              {...register("password", { required: true })}
+              type='password'
+            />
+            {errors.password?.type === 'required' && <span className='msg-valid'>password is required</span>}
+          </div>
+
         </div>
         <div className='row button-wrapper'>
           <button type='submit'>Log in</button>
