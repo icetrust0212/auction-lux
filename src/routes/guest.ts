@@ -1,10 +1,12 @@
 import { RouteInterface } from '../static/interfaces/RouteInterface';
 import Home from '../pages/Home/Home';
 import LoginPage from '../pages/LoginPage/LoginPage';
+import home_routes from './home_routes';
+
 export const guestRoutes:RouteInterface[] = [
   {
     path: '/register',
-    redirect: '/login',
+    redirect: '/home',
     exact : true
   },
   {
@@ -14,12 +16,13 @@ export const guestRoutes:RouteInterface[] = [
   },
   {
     path: '/',
-    redirect: '/login',
+    redirect: '/home',
     exact: true,
   },
   {
     path: '/home',
-    redirect: '/login',
+    component: Home,
+    routes: home_routes
   }
 ]
 

@@ -1,13 +1,13 @@
-export const NavPanel = [{
+export const authMenu = [{
     id: 1,
-    title: 'Upcomming',
-    href: '/',
+    title: 'About',
+    href: '/about',
     subMenu: []
 },
 {
     id: 2,
-    title: 'Blog',
-    href: '/',
+    title: 'Causes',
+    href: '/causes',
     subMenu: [{
         id: 1,
         title: 'submenu 1',
@@ -17,18 +17,31 @@ export const NavPanel = [{
 {
     id: 3,
     title: 'Scholarship',
-    href: '/',
+    href: '/scholarship',
     subMenu: []
 },
 {
     id: 4,
     title: 'Contact',
-    href: '/',
+    href: '/contact',
+    subMenu: []
+}];
+
+export const userMenu = [{
+    id: 1,
+    title: 'About',
+    href: '/about',
+    subMenu: []
+},
+{
+    id: 4,
+    title: 'Contact',
+    href: '/contact',
     subMenu: []
 },
 {
     id: 5,
-    title: 'Join',
-    href: '/',
+    title: 'Enter',
+    href: '/login',
     subMenu: []
 }]
