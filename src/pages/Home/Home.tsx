@@ -22,7 +22,7 @@ const Home = (props: PropTypes) => {
     <Layout>
       <div className="wrapper">
         <button className = 'btn btn-danger' onClick={handleshow}>ShowModal</button>
-        <LoginModal show = {show}/>
+        <LoginModal show = {show} onHide={()=>{setShow(false)}}/>
         <AuctionViewHome item={products[0]} />
         <div className="auctions-layout">
           <div className="w-100">

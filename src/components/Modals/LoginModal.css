@@ -1,8 +1,6 @@
 .modalSize {
   width: 600px;
-  border-radius: 10px;
   overflow: hidden;
-  border-radius: 10px;
 }
 
 .title-header {
@@ -26,7 +24,7 @@
   font-weight: 300;
 }
 
-.title-header .list-group li.active {
+.title-header .list-group li.list-group-item.active {
   font-weight: 400;
   color: var(--text-color-dark) !important;
   background: transparent !important;
@@ -41,6 +39,9 @@
 }
 
 .signin-content input, .signin-content input:focus {
+  font-weight: 300;
+  font-size: 12px;
+  padding: 0px 15px;
   width: 100%;
   height: 30px;
   outline: none;
@@ -90,8 +91,17 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: 1px solid #CA0204;
   background-color: #CA0204;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   height: 28px;
+}
+
+.signin-content .button-enter button:hover {
+  border: 1px solid #CA0204;
+  background-color: white;
+  color: #CA0204;
 }
 
 .signin-content .button-wrapper {
@@ -125,6 +135,13 @@
   border-radius: 10px;
   background-color: white;
   border: 1px solid #FCD6D6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.signin-content .button-wrapper button:hover {
+  background-color: #ec5959;
+  color: white;
 }
 
 .signup-content {
@@ -229,6 +246,13 @@
   border-radius: 5px;
   background-color: white;
   border: 2px solid #FCD6D6;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.signup-content .footer .layer .btn-wrapper .btn-entire:hover {
+  background-color: #eb5f5f;
+  color: white;
 }
 
 .signup-content .footer .footer-caption {
@@ -253,8 +277,16 @@
   height: 33px;
   border-radius: 5px;
   background-color: #CA0302;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   color: white;
   border: none;
+}
+
+.signup-content .footer .btn-winning:hover {
+  border: 1px solid #CA0302;
+  background-color: white;
+  color: red;
 }
 
 .signup-content .footer .short-label {
