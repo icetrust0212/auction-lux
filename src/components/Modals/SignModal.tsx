@@ -7,7 +7,7 @@ import './LoginModal.css'
 import SigninForm from '../Forms/SigninForm'
 import SignupForm from '../Forms/SignupForm'
 
-const TestModal = (props: PropTypes) => {
+const SignModal = (props: PropTypes) => {
   const [activeState, setActiveState] = useState('signin')
   const [signup_drop, setActiveDrop] = useState(false)
 
@@ -59,4 +59,4 @@ interface PropTypes {
   show?: boolean
   onHide: (data: any) => void
 }
-export default TestModal
+export default SignModal

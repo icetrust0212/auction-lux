@@ -6,7 +6,7 @@ import OnboardingButton from '../components/common/OnboardingButton/OnboardingBu
 import PageHeader from '../components/PageHeader/PageHeader';
 import { getLogInModalShowState } from '../store/reducers';
 import {modalActions} from '../store/actions';
-import  LoginModal  from '../components/Modals/TestModal';
+import  SignModal  from '../components/Modals/SignModal';
 
 import './layout.css';
 
@@ -17,7 +17,7 @@ const Layout = (props: PropsType) => {
     <div className="page-layout">
       <PageHeader />
       <div className="content-wrapper">{props.children}</div>
-      <LoginModal show = {showLoginModal} onHide={()=>{dispatch(modalActions.hideLoginModal())}}/>
+      <SignModal show = {showLoginModal} onHide={()=>{dispatch(modalActions.hideLoginModal())}}/>
     </div>
   )
 }
