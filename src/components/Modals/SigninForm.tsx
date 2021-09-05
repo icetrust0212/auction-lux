@@ -45,14 +45,9 @@ const SigninForm = ({ handleSubmit, pristine, reset, submitting }: PropsType) =>
             component={renderField}
             validate={[FormValidator.required]}
           />
-
-          <div className='col-md-4 button-enter'>
-            <button>ENTER</button>
-          </div>
         </div>
-
         <div className='row button-wrapper'>
-          <button type='button'>Earn Free Entries</button>
+          <button type='submit'>Log in</button>
         </div>
       </div>
     </form>
