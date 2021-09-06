@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { userMenu, authMenu } from "../../static/NavPanel";
-import { modalActions } from "../../store/actions";
+import { modalActions, userActions } from "../../store/actions";
 import { getLoggedInState } from "../../store/reducers";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import "./pageHeader.css";
@@ -43,13 +43,7 @@ const PageHeader = () => {
             {
               navPanel.map(navItem => {
                 if (!navItem.subMenu || navItem.subMenu.length === 0) {
-                  if (navItem.href !== '/login') {
-                    return <Link to={navItem.href} key={navItem.id} className="header-navItem color-dark">{navItem.title}</Link>
-                  } else {
-                    return <a className="header-navItem color-dark" onClick={() => {
-                      dispatch(modalActions.showLoginModal());
-                    }}>{navItem.title}</a>
-                  }
+                  return <Link to={navItem.href} key={navItem.id} className="header-navItem color-dark">{navItem.title}</Link>
                 } else {
                   return (
                     <NavDropdown title={navItem.title} className="color-dark" id="collasible-nav-dropdown" key={navItem.id}>
@@ -61,6 +55,20 @@ const PageHeader = () => {
               })
             }
           </Nav>
+          {loggedIn &&
+            <NavDropdown title=
+              {
+                <img className="thumbnail-image"
+                  src={'/assets/images/no-user.png'}
+                  alt="user pic"
+                />
+              } className="color-dark profile-layout" id="collasible-nav-dropdown" >
+              <a className="dropdown-item" href="#">Dashboard</a>
+              <a className="dropdown-item" href="#">Edit Profile</a>
+              <a className="dropdown-item" onClick={() => dispatch(userActions.logout())}>Log Out</a>
+            </NavDropdown>
+          }
+
         </Navbar.Collapse>
       </Container>
     </Navbar>

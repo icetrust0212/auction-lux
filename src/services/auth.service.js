@@ -20,11 +20,10 @@ function login(username, password) {
             return user;
         });
 }
-const signUp = (username, password) => {
+const signUp = (data) => {
     console.log('signUp url: ', process.env.REACT_APP_API_URL)
     return axios.post(`auth/signup`, {
-            username,
-            password
+           ...data
         })
         .then(handleResponse)
         .then(user => {

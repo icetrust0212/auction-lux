@@ -31,6 +31,25 @@
     padding-top: 20px !important;
 }
 
+.profile-layout {
+    margin-right: 230px;
+    .thumbnail-image {
+        width: 40px;
+        height: 40px;
+        padding: 3px;
+        border-radius: 50%;
+        overflow: hidden;
+        border: 2px solid var(--primary-color);
+    }
+    a {
+        cursor: pointer !important;
+    }
+}
+
+.dropdown-menu {
+    z-index: 100000 !important;
+}
+
 @media screen and (max-width: 767px) {
     .navbar-nav {
         a {
