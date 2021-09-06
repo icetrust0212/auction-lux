@@ -41,7 +41,7 @@ export const userMenu = [{
 },
 {
     id: 5,
-    title: 'Enter',
+    title: 'Log In',
     href: '/login',
     subMenu: []
 }]

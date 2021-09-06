@@ -1,0 +1,25 @@
+.custom-modal {
+  width: fit-content;
+  overflow: hidden;
+}
+.modal-body {
+  padding: 20px;
+  .title-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    h3 {
+      margin: 0;
+      border: none !important;
+      padding: 0px 10px !important;
+      cursor: pointer;
+      font-weight: 400;
+      color: var(--text-color-dark) !important;
+      background: transparent !important;
+    }
+  }
+  .modal-content {
+    padding-top: 30px;
+    border: none
+  }
+}

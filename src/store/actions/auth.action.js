@@ -1,5 +1,6 @@
 import { userConstants } from '../constants';
 import { userService } from '../../services';
+import { modalActions } from './modal.action';
 
 function login(username, password) {
     return dispatch => {
@@ -10,6 +11,7 @@ function login(username, password) {
                 user => { 
                     console.log ('login: ', user);
                     dispatch(success(user));
+                    dispatch(modalActions.hideLoginModal());
                 },
                 error => {
                     console.log ('login: ', error);
@@ -24,14 +26,15 @@ function login(username, password) {
     function failure(error) { return { type: userConstants.LOGIN_FAILURE, payload: error } }
 }
 
-const signUp = (username, password) => {
+const signUp = (data) => {
     return dispatch => {
-        dispatch(request({ username }));
-        userService.signUp(username, password)
+        dispatch(request({ username: data.username }));
+        userService.signUp(data)
             .then(
                 user => { 
                     console.log ('signUp: ', user);
                     dispatch(success(user));
+                    dispatch(modalActions.hideSignUpModal())
                 },
                 error => {
                     console.log ('login: ', error);

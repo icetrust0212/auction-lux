@@ -1,0 +1,88 @@
+.sign-container .brand-wrapper {
+  margin-bottom: 19px;
+}
+
+.sign-container .login-card {
+  border: 0;
+  border-radius: 1.25rem !important;
+  -webkit-box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+          box-shadow: 0 10px 30px 0 rgba(172, 168, 168, 0.43);
+  overflow: hidden;
+  margin: auto;
+  height: 90vh;
+  width: 90%;
+}
+
+.sign-container .login-card .no-gutters {
+  height: 100%;
+}
+
+.sign-container .login-card .custom-wrapper {
+  height: 100%;
+}
+
+.sign-container .login-card-img {
+  border-radius: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.sign-container .login-card .card-body {
+  padding: 40px 60px 60px;
+}
+
+@media (max-width: 422px) {
+  .sign-container .login-card .card-body {
+    padding: 35px 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .sign-container .login-card .card-body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.sign-container .login-card-description {
+  font-size: 25px;
+  color: #000;
+  font-weight: normal;
+  margin-bottom: 23px;
+}
+
+.sign-container .login-card-footer-nav {
+  width: 100%;
+  max-width: 326px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.sign-container .login-card-footer-nav a {
+  font-size: 14px;
+  color: #919aa3;
+}
+
+@media (max-width: 767px) {
+  .sign-container .login-card {
+    height: auto;
+  }
+  .sign-container .login-card .login-card-img {
+    display: none;
+  }
+}
+/*# sourceMappingURL=SignPage.css.map */

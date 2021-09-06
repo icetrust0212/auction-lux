@@ -2,61 +2,33 @@ import { Modal} from 'react-bootstrap'
 
 import { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import './LoginModal.css'
-
-import SigninForm from '../Forms/SigninForm'
-import SignupForm from '../Forms/SignupForm'
+import './SignModal.css'
 
 const SignModal = (props: PropTypes) => {
-  const [activeState, setActiveState] = useState('signin')
-  const [signup_drop, setActiveDrop] = useState(false)
-
   return (
     <Modal
       {...props}
       show={props.show}
       aria-labelledby='contained-modal-title-vcenter'
-      dialogClassName='modalSize'
-      size='lg'
+      dialogClassName='custom-modal'
       centered
     >
-      <Modal.Body>
+      <Modal.Body className="modal-body">
         <div className='title-header'>
-          <ul className='list-group list-group-horizontal responsive-none'>
-            <li
-              className={
-                'list-group-item size-large' +
-                (activeState === 'signin' ? ' active' : '')
-              }
-              onClick={(e) => {
-                setActiveState('signin')
-              }}
-            >
-              SIGN IN
-            </li>
-
-            <li
-              className={
-                'auction-header-item capitalize list-group-item size-large' +
-                (activeState === 'signup' ? ' active' : '')
-              }
-              onClick={(e) => {
-                setActiveState('signup')
-              }}
-            >
-              SIGN UP
-            </li>
-          </ul>
+            <h3 className='auction-header-item capitalize size-large active'>{props.title}</h3>
         </div>
-        {activeState === 'signin' && <SigninForm />}
-        {activeState === 'signup' && <SignupForm signup_drop={signup_drop} setActiveDrop={setActiveDrop}/> }
+        <div className="modal-content">
+          {props.children}
+        </div>
       </Modal.Body>
     </Modal>
   )
 }
 
 interface PropTypes {
-  show?: boolean
-  onHide: (data: any) => void
+  show?: boolean,
+  onHide: (data: any) => void,
+  children: any,
+  title: string
 }
 export default SignModal
