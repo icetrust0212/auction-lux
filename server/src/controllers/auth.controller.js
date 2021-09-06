@@ -5,6 +5,7 @@ const Role = db.role;
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
+const { faThermometerQuarter } = require("@fortawesome/free-solid-svg-icons");
 
 exports.signup = (req, res) => {
     const user = new User({
@@ -18,7 +19,8 @@ exports.signup = (req, res) => {
     user.save((err, user) => {
         if (err) {
             res.status(500).send({
-                message: err
+                message: err,
+                success: false,
             });
             return;
         }
@@ -32,7 +34,8 @@ exports.signup = (req, res) => {
                 (err, roles) => {
                     if (err) {
                         res.status(500).send({
-                            message: err
+                            message: err,
+                            success: false,
                         });
                         return;
                     }
@@ -41,13 +44,15 @@ exports.signup = (req, res) => {
                     user.save(err => {
                         if (err) {
                             res.status(500).send({
-                                message: err
+                                message: err,
+                                success: false
                             });
                             return;
                         }
 
                         res.send({
-                            message: "User was registered successfully!"
+                            message: "User was registered successfully!",
+                            success: true
                         });
                     });
                 }
@@ -58,7 +63,8 @@ exports.signup = (req, res) => {
             }, (err, role) => {
                 if (err) {
                     res.status(500).send({
-                        message: err
+                        message: err,
+                        success: false,
                     });
                     return;
                 }
@@ -67,13 +73,15 @@ exports.signup = (req, res) => {
                 user.save(err => {
                     if (err) {
                         res.status(500).send({
-                            message: err
+                            message: err,
+                            success: false,
                         });
                         return;
                     }
 
                     res.send({
-                        message: "User was registered successfully!"
+                        message: "User was registered successfully!",
+                        success: true
                     });
                 });
             });
@@ -90,14 +98,16 @@ exports.signin = (req, res) => {
         .exec((err, user) => {
             if (err) {
                 res.status(500).send({
-                    message: err
+                    message: err,
+                    success: false,
                 });
                 return;
             }
 
             if (!user) {
                 return res.status(404).send({
-                    message: "User Not found."
+                    message: "User Not found.",
+                    success: false,
                 });
             }
 
@@ -109,7 +119,8 @@ exports.signin = (req, res) => {
             if (!passwordIsValid) {
                 return res.status(401).send({
                     accessToken: null,
-                    message: "Invalid Password!"
+                    message: "Invalid Password!",
+                    success: false,
                 });
             }
 
@@ -129,7 +140,8 @@ exports.signin = (req, res) => {
                 username: user.username,
                 email: user.email,
                 roles: authorities,
-                accessToken: token
+                accessToken: token,
+                success: true,
             });
         });
 };

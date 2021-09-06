@@ -16,5 +16,9 @@ export const authRoutes:RouteInterface[] = [
   {
     path: '/login',
     redirect: '/',
-  }
+  },
+  {
+    path: '/register',
+    redirect: '/',
+  },
 ]

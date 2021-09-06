@@ -46,8 +46,20 @@
     }
 }
 
-.dropdown-menu {
-    z-index: 100000 !important;
+.profile-layout {
+
+    .dropdown-menu {
+        z-index: 100000 !important;
+    }
+    .dropdown-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .dropdown-item.active, .dropdown-item:active {
+        background-color: var(--primary-color) !important;
+        color: white !important
+    }
 }
 
 @media screen and (max-width: 767px) {

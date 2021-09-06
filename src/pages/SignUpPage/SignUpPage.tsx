@@ -9,11 +9,11 @@ type Inputs = {
   };
 
 
-const SignInPage = ({ pristine, reset, submitting }: PropsType) => {
+const SignInPage = ({ pristine, reset, submitting, handleNotification}: PropsType) => {
     
   return (
     <SignPage title="Register your account" imgUrl="/assets/images/signup.jpg">
-        <SignUpForm />
+        <SignUpForm handleNotification={handleNotification} />
     </SignPage>
   )
 }
@@ -22,7 +22,8 @@ interface PropsType {
   handleSubmit: () => void,
   pristine: boolean,
   reset: () => void,
-  submitting: boolean
+  submitting: boolean,
+  handleNotification: (type: string, title: string, msg: string) => void;
 }
 
 export default SignInPage;

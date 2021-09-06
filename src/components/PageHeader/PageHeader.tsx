@@ -6,13 +6,16 @@ import { userMenu, authMenu } from "../../static/NavPanel";
 import { modalActions, userActions } from "../../store/actions";
 import { getLoggedInState } from "../../store/reducers";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
+import { PencilSquare, Power} from 'react-bootstrap-icons';
 import "./pageHeader.css";
+import SignOut from "../SignOut/SignOut";
+import { useState } from "react";
 
 const PageHeader = () => {
   const loggedIn = useSelector(state => getLoggedInState(state));
   const navPanel = loggedIn ? authMenu : userMenu;
   const dispatch = useDispatch();
-
+  const [signoutModalShow, showSignoutModalShow] = useState(false);
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" sticky="top" className="bg-white navbar-auction weight-light">
       <Row className="ad-auction-slot d-flex justify-content-around">
@@ -63,14 +66,22 @@ const PageHeader = () => {
                   alt="user pic"
                 />
               } className="color-dark profile-layout" id="collasible-nav-dropdown" >
-              <a className="dropdown-item" href="#">Dashboard</a>
-              <a className="dropdown-item" href="#">Edit Profile</a>
-              <a className="dropdown-item" onClick={() => dispatch(userActions.logout())}>Log Out</a>
+              <a className="dropdown-item color-dark" href="#">
+                <span>Edit Profile</span> 
+                <PencilSquare className="profile-icon"/>
+              </a>
+              <a className="dropdown-item color-dark" onClick={() => showSignoutModalShow(true)}>
+                <span>Log Out</span>
+                <Power className="profile-icon"/>
+              </a>
             </NavDropdown>
           }
 
         </Navbar.Collapse>
       </Container>
+      {
+        loggedIn && <SignOut show={signoutModalShow} onHide={() => showSignoutModalShow(false)}/>
+      }
     </Navbar>
   )
 }

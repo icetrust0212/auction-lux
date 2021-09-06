@@ -24,7 +24,6 @@ const App = (props: any) => {
   console.log ('App: ', loggedInState);
   const location = useLocation();
   const routingComponent = (
-    // <Container className="custom-container">
       <Switch
         location={location}
       >
@@ -49,7 +48,6 @@ const App = (props: any) => {
           )
         })}
       </Switch>
-    // </Container>
   )
 
   const handleNotification = (type: "success" | "warning" | "info" | "error", title: string, msg: string) => {

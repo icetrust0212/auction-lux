@@ -59,8 +59,25 @@
   cursor: pointer !important;
 }
 
-.dropdown-menu {
+.profile-layout .dropdown-menu {
   z-index: 100000 !important;
+}
+
+.profile-layout .dropdown-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profile-layout .dropdown-item.active, .profile-layout .dropdown-item:active {
+  background-color: var(--primary-color) !important;
+  color: white !important;
 }
 
 @media screen and (max-width: 767px) {

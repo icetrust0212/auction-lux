@@ -2,7 +2,7 @@ import { userConstants } from '../constants';
 import { userService } from '../../services';
 import { modalActions } from './modal.action';
 
-function login(username, password) {
+function login(username, password, onSuccess, onFailer) {
     return dispatch => {
         dispatch(request({ username }));
 
@@ -11,12 +11,11 @@ function login(username, password) {
                 user => { 
                     console.log ('login: ', user);
                     dispatch(success(user));
-                    dispatch(modalActions.hideLoginModal());
+                    onSuccess();
                 },
                 error => {
-                    console.log ('login: ', error);
-                    dispatch(failure(error));
-                    
+                    dispatch(failure( error  ));
+                    onFailer(error);
                 }
             );
     };
@@ -26,26 +25,26 @@ function login(username, password) {
     function failure(error) { return { type: userConstants.LOGIN_FAILURE, payload: error } }
 }
 
-const signUp = (data) => {
-    return dispatch => {
+const signUp = (data, onSuccess, onFailer) => {
+    return  (dispatch) => {
         dispatch(request({ username: data.username }));
-        userService.signUp(data)
+            userService.signUp(data)
             .then(
-                user => { 
-                    console.log ('signUp: ', user);
-                    dispatch(success(user));
-                    dispatch(modalActions.hideSignUpModal())
+                data => { 
+                    console.log ('signUp: ', data);
+                    dispatch(success(data));
+                    onSuccess();
                 },
                 error => {
                     console.log ('login: ', error);
                     dispatch(failure(error));
-                    
+                    onFailer(error);
                 }
             );
     };
 
     function request(user) { return { type: userConstants.SIGNUP_REQUEST, payload: user } }
-    function success(user) { return { type: userConstants.SIGNUP_SUCCESS, payload: user } }
+    function success(data) { return { type: userConstants.SIGNUP_SUCCESS, payload: data } }
     function failure(error) { return { type: userConstants.SIGNUP_FAILURE, payload: error } }
 
 

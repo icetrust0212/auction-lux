@@ -4,6 +4,9 @@ import { userActions } from '../../../store/actions';
 import './SignUpForm.css';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useSelector } from "react-redux";
+import { getError, getSignedUpState, getSigningUpState } from "../../../store/reducers";
+import CustomSpinner from "../../Spinner/Spinner";
 
 type Inputs = {
     username: string,
@@ -13,11 +16,21 @@ type Inputs = {
 };
 
 
-const SignUpForm = () => {
+const SignUpForm = ({handleNotification}: PropsType) => {
     const dispatch = useDispatch();
     const { register, handleSubmit, watch, formState: { errors } } = useForm<Inputs>();
+    const signingUp = useSelector(state => getSigningUpState(state));
+
+    const onSuccess = () => {
+        handleNotification('success', 'SignUp Success', '');
+    }
+    const onFailer = (error:string) => {
+        handleNotification('error', 'SignUp failed', error);
+    }
     const onSubmit: SubmitHandler<Inputs> = data => {
-        if (isCorrectPass === true) dispatch(userActions.signUp(data));
+        if (isCorrectPass === true) {
+            dispatch(userActions.signUp(data, onSuccess, onFailer));
+        }
     }
     const [isCorrectPass, setPassState] = useState(true);
     const [password, setPassword] = useState("");
@@ -86,7 +99,10 @@ const SignUpForm = () => {
                         }
                     </div>
                 </div>
-                <button className="btn btn-block login-btn mb-4" type="submit">SignUp</button>
+                <button className="btn btn-block login-btn mb-4" type="submit" disabled={signingUp}>
+                    { signingUp && <CustomSpinner />}
+                    {!signingUp && 'Signup'}
+                </button>
             </form>
             <p className="login-card-footer-text mt-2">Do you already have an account? <Link to="/login" className="text-reset">Sign in here</Link></p>
 
@@ -94,5 +110,8 @@ const SignUpForm = () => {
     )
 }
 
+interface PropsType {
+    handleNotification: (type: string, title: string, msg: string) => void;
+}
 
 export default SignUpForm;
