@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAAA,AAEI,aAFS,CAET,YAAY,CAAC;EACT,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI;CACf",
     "sources": [
         "SignOut.scss"
     ],

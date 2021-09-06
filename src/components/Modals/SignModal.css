@@ -3,6 +3,7 @@
   width: -moz-fit-content;
   width: fit-content;
   overflow: hidden;
+  margin: auto;
 }
 
 .modal-body {

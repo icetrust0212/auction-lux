@@ -9,7 +9,7 @@ const SignOut = ({onHide, show}:PropsType) => {
     return (
         <SignModal title="Signout" onHide={onHide} show={show} >
             <div className="signout-body">
-                <h3>Do you want to Sign Out?</h3>
+                <h5>Do you want to Sign Out?</h5>
                 <div className="modal-footer d-flex justify-content-between align-items-center mt-3">
                     <button className="btn btn-primary" onClick={() => {
                         dispatch(userActions.logout());

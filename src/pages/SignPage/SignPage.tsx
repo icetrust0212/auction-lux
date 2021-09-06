@@ -1,5 +1,6 @@
 import './SignPage.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Link } from "react-router-dom";
 
 const SignPage = ({imgUrl, children, title}: PropsType) => {
  
@@ -8,12 +9,14 @@ const SignPage = ({imgUrl, children, title}: PropsType) => {
         <div className="card login-card">
           <div className="row no-gutters ">
             <div className="col-md-5 custom-wrapper">
-              <img src={imgUrl} alt="login" className="login-card-img" />
+             <img src={imgUrl} alt="login" className="login-card-img" />
             </div>
             <div className="col-md-7 custom-wrapper">
               <div className="card-body">
                 <div className="brand-wrapper">
-                  <img src="/assets/images/logo-golden.png" alt="logo" className="logo" />
+                    <Link to="/">
+                        <img src="/assets/images/logo-golden.png" alt="logo" className="logo" />
+                    </Link>
                 </div>
                 <p className="login-card-description">{title}</p>
 
