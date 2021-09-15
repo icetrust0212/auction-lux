@@ -11,15 +11,29 @@ import { Magnifier, GlassMagnifier, MOUSE_ACTIVATION, TOUCH_ACTIVATION } from "r
 import { Link, useLocation, useRouteMatch } from "react-router-dom";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import EntryModal from '../Modals/EntryModal/EntryModal'
+import WildcardEntryModal from "../Modals/EntryModal/WildcardEntryModal";
+import SubmittedEntryModal from "../Modals/EntryModal/SubmittedEntryModal";
+import { useState } from 'react'
 
 const AuctionViewHome = ({ item }: PropsType) => {
   const { url, path, params } = useRouteMatch();
   const location = useLocation();
   const activeColor = 'var(--secondary-color)';
   const inActiveColor = 'var(--text-color-lighter)';
+  const [ismodal, setModal] = useState(false)
+
+  const onEntryModal = () => {
+    setModal(true)
+  }
+
+  const onModalHide = () => {
+    setModal(false)
+  }
 
   return (
     <div className="auction-view-home-container">
+      <SubmittedEntryModal show={ismodal} onHide={onModalHide}/>
       <Row className="top-row">
         <Col md={8} className="main-product-view">
           <GlassMagnifier
@@ -64,7 +78,7 @@ const AuctionViewHome = ({ item }: PropsType) => {
 
           <p className="mt-4 d-flex justify-content-between">
             <div className="w-40">
-              <OnboardingButton>Enter to Win</OnboardingButton>
+              <OnboardingButton onClick={() => {onEntryModal()}}>Add Entries</OnboardingButton>
             </div>
             <div className="w-40">
               <OnboardingButton>Item Info</OnboardingButton>
@@ -118,7 +132,7 @@ const AuctionViewHome = ({ item }: PropsType) => {
 }
 
 interface PropsType {
-  item: AuctionProduct
+  item: AuctionProduct,
 }
 
 export default AuctionViewHome;
