@@ -39,11 +39,29 @@ const PageHeader = () => {
             src="/assets/images/logo-golden.png"
             className="d-inline-block align-top logo"
           />
+
         </Navbar.Brand>
+        <NavDropdown title=
+          {
+            <img className="thumbnail-image"
+              src={'/assets/images/no-user.png'}
+              alt="user pic"
+            />
+          } className="color-dark profile-layout-responsive" id="collasible-nav-dropdown" >
+          <Link to={'/profile'} className="dropdown-item color-dark" >
+            <span>Edit Profile</span>
+            <PencilSquare className="profile-icon"/>
+          </Link>
+          <a className="dropdown-item color-dark" onClick={() => showSignoutModalShow(true)}>
+            <span>Log Out</span>
+            <Power className="profile-icon"/>
+          </a>
+        </NavDropdown>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="navbar-center">
           <Nav className="me-auto">
             {
+
               navPanel.map(navItem => {
                 if (!navItem.subMenu || navItem.subMenu.length === 0) {
                   return <Link to={navItem.href} key={navItem.id} className="header-navItem color-dark">{navItem.title}</Link>
@@ -66,10 +84,10 @@ const PageHeader = () => {
                   alt="user pic"
                 />
               } className="color-dark profile-layout" id="collasible-nav-dropdown" >
-              <a className="dropdown-item color-dark" href="#">
-                <span>Edit Profile</span> 
+              <Link to={'/profile'} className="dropdown-item color-dark" >
+                <span>Edit Profile</span>
                 <PencilSquare className="profile-icon"/>
-              </a>
+              </Link>
               <a className="dropdown-item color-dark" onClick={() => showSignoutModalShow(true)}>
                 <span>Log Out</span>
                 <Power className="profile-icon"/>

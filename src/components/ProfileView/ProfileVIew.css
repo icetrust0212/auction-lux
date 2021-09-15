@@ -1,0 +1,43 @@
+.profile-photo {
+  width: 100%;
+}
+
+.big-caption {
+  font-size: 16px;
+}
+
+.medium-caption {
+  font-size: 14px;
+}
+
+.small-caption {
+  font-weight: 100;
+  font-size: 13px;
+  color: #aaa;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper .edit-icon {
+  color: #aaa;
+  position: absolute;
+  right: 5px;
+  top: 10px;
+}
+
+.content-wrapper .about-member {
+  position: relative;
+}
+
+.content-wrapper .about-member .edit-icon {
+  position: absolute;
+  top: 0px;
+  left: 230px;
+}
+
+.content-wrapper .about-member .edit-icon span {
+  color: #aaa;
+}
+/*# sourceMappingURL=profileView.css.map */

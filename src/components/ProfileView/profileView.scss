@@ -1,0 +1,39 @@
+.profile-photo {
+  width: 100%;
+}
+
+.big-caption {
+  font-size: 16px;
+}
+
+.medium-caption {
+  font-size: 14px;
+}
+
+.small-caption {
+  font-weight: 100;
+  font-size: 13px;
+  color: #aaa;
+}
+.image-wrapper {
+  position: relative;
+  .edit-icon {
+    color: #aaa;
+    position: absolute;
+    right: 5px;
+    top: 10px;
+  }
+}
+.content-wrapper {
+  .about-member{
+    position: relative;
+    .edit-icon {
+      position: absolute;
+      top: 0px;
+      left: 230px;
+    }
+    .edit-icon span{
+      color: #aaa;
+    }
+  }
+}

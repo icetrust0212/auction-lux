@@ -1,9 +1,8 @@
 import './SignPage.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from "react-router-dom";
 
 const SignPage = ({imgUrl, children, title}: PropsType) => {
- 
+
   return (
     <div className="d-flex align-items-center min-vh-100 sign-container">
         <div className="card login-card">
