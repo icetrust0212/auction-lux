@@ -20,6 +20,7 @@ function login(username, password) {
 
             return user;
         }).catch(error => {
+            console.log('login error:', error)
             return Promise.reject(error.response.data.message);
         });
 }
