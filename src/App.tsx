@@ -36,7 +36,7 @@ const App = (props: any) => {
               exact={route.exact}
             >
               {
-              route.redirect && 
+              route.redirect &&
                 <Redirect
                   to={{
                     pathname: route.redirect,

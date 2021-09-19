@@ -59,6 +59,23 @@
   cursor: pointer !important;
 }
 
+.profile-layout-responsive {
+  display: none;
+}
+
+.profile-layout-responsive .thumbnail-image {
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--primary-color);
+}
+
+.profile-layout-responsive a {
+  cursor: pointer !important;
+}
+
 .profile-layout .dropdown-menu {
   z-index: 100000 !important;
 }
@@ -105,6 +122,18 @@
   .navbar-light .navbar-nav .nav-link {
     text-align: end;
     margin-left: auto;
+  }
+  .profile-layout {
+    display: none;
+  }
+  .container {
+    position: relative;
+  }
+  .profile-layout-responsive {
+    position: absolute !important;
+    right: 60px;
+    top: -3px;
+    display: block;
   }
 }
 /*# sourceMappingURL=pageHeader.css.map */

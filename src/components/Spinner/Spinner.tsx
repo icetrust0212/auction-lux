@@ -1,5 +1,4 @@
 import { Spinner } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CustomSpinner = () => {
     return (

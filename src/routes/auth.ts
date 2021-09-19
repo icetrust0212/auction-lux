@@ -1,4 +1,5 @@
 import Home from '../pages/Home/Home';
+import ProfilePage from '../pages/ProfilePage/ProfilePage'
 import { RouteInterface } from '../static/interfaces/RouteInterface';
 import home_routes from './home_routes';
 
@@ -20,5 +21,9 @@ export const authRoutes:RouteInterface[] = [
   {
     path: '/register',
     redirect: '/',
+  },
+  {
+    path: '/profile',
+    component: ProfilePage,
   },
 ]

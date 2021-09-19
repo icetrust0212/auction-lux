@@ -1,7 +1,6 @@
 import { Modal} from 'react-bootstrap'
 
 import { useState } from 'react'
-import 'bootstrap/dist/css/bootstrap.min.css'
 import './SignModal.css'
 
 const SignModal = (props: PropTypes) => {
