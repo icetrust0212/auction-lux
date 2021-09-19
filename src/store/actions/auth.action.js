@@ -9,7 +9,7 @@ function login(username, password, onSuccess, onFailer) {
         userService.login(username, password)
             .then(
                 user => { 
-                    console.log ('login: ', user);
+                    console.log ('loginsuccess: ', user);
                     dispatch(success(user));
                     onSuccess();
                 },

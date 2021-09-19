@@ -5,40 +5,50 @@ import axios from '../api/axios';
 
 
 
-function login(username, password) {
+const login = async (username, password) => {
 
     console.log('login url: ', process.env.REACT_APP_API_URL)
+    try {
 
-    return axios.post(`auth/signin`, {
-            username,
-            password
-        })
-        .then(handleResponse)
-        .then(user => {
-            // store user details and jwt token in local storage to keep user logged in between page refreshes
-            localStorage.setItem('user', JSON.stringify(user));
+        let response = axios.post(`auth/signin`, {
+                username,
+                password
+            })
+            .then(handleResponse)
+            .then(data => {
+                console.log('success:', data)
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                const username  = {data};
+                const roles = {data};
+                const accessToken = {data};
+                const email = {data};
+                localStorage.clear();
+                const user = {username, roles, email, accessToken};
+                localStorage.setItem('user', JSON.stringify(user));
 
-            return user;
-        }).catch(error => {
-            console.log('login error:', error)
-            return Promise.reject(error.response.data.message);
-        });
+                return user;
+            });
+        return response;
+    } catch (error) {
+        console.log('loginerror: ', error)
+        return Promise.reject(error.response.data.message);
+    };
 }
 const signUp = async (data) => {
     console.log('signUp url: ', process.env.REACT_APP_API_URL)
-    try{
-       let response = await axios.post(`auth/signup`, {
-            ...data
-        }) 
-        .then(handleResponse)
-        .then(data => {
-            // store user details and jwt token in local storage to keep user logged in between page refreshes
-            // localStorage.setItem('user', JSON.stringify(user));
-            return data;
-        });
+    try {
+        let response = await axios.post(`auth/signup`, {
+                ...data
+            })
+            .then(handleResponse)
+            .then(data => {
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                // localStorage.setItem('user', JSON.stringify(user));
+                return data;
+            });
         return response;
-    } catch(e) {
-        console.log ('signup err: ', e.response);
+    } catch (e) {
+        console.log('signup err: ', e.response);
         return Promise.reject(e.response.data.message);
     }
 }
@@ -70,7 +80,7 @@ function handleResponse(response) {
         const error = (data && data.message) || response.statusText;
         return Promise.reject(error);
     }
-
+    console.log('handleresponsedata: ', data)
     return data;
 }
 
