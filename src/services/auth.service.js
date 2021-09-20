@@ -27,6 +27,8 @@ const login = async (username, password) => {
                 localStorage.setItem('user', JSON.stringify(user));
 
                 return user;
+            }, err => {
+                return Promise.reject(JSON.stringify(err.response.data.message));
             });
         return response;
     } catch (error) {
@@ -45,6 +47,8 @@ const signUp = async (data) => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 // localStorage.setItem('user', JSON.stringify(user));
                 return data;
+            }, err => {
+                return Promise.reject(err.response.data.message);
             });
         return response;
     } catch (e) {
