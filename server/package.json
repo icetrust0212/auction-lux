@@ -5,7 +5,8 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node src/index.js",
     "dev": "cross-env NODE_ENV=local nodemon src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:makemigrations": "./node_modules/sequelize-auto-migrations/bin/makemigration.js"
   },
   "author": "",
   "license": "ISC",
@@ -28,6 +29,7 @@
     "mysql": "^2.18.1",
     "querymen": "^2.1.4",
     "sequelize": "^6.6.5",
+    "sequelize-auto-migrations": "github:scimonster/sequelize-auto-migrations#a063aa6535a3f580623581bf866cef2d609531ba",
     "twilio": "^3.66.0",
     "uuid": "^8.3.2"
   },

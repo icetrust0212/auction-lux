@@ -8,7 +8,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <Basket size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        Cars, Beauty, Events, Music, Pets, Sports, Style and Fashion, Techonolgy and Computingm Travel
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -19,7 +19,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <PiggyBank size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        $132.00 banked and available | $20.00 pending
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -30,7 +30,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <BarChartFill size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        2 Auctions won, Total Win Value: $9,653. 10
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -41,18 +41,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <ChatDotsFill size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
-      </label>
-      <span className='back-icons'>
-        <Gear size='24' /> <PencilSquare size='24' />
-      </span>
-    </div>
-    <div className='row'>
-      <span className='front-icon'>
-        <Basket size='24' />
-      </span>
-      <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        12 Messages | 2 Unread messages | 8 Discarded messages | 2 saved messages
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -63,7 +52,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <Heart size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        21 Shared events | 8 Auctions | 13 Wildcard
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -74,7 +63,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <CreditCard2Back size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        Average monthly spend: $100.00
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -85,7 +74,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <PlusLg size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        31 follow your bids | Active Social channels:
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -96,7 +85,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <ArrowBarUp size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        Your activity over the last 30 days has increased by 31%
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
@@ -107,7 +96,7 @@ const YourProfile = (/*data:propTypes*/) => {
         <CurrencyDollar size='24' />
       </span>
       <label className='label-content'>
-        asdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdfasdfasdfsdfsdfsdfszfsdfasdfasdfwerwefawefawefsdf
+        Your total charitable giving amount: $26.00
       </label>
       <span className='back-icons'>
         <Gear size='24' /> <PencilSquare size='24' />
