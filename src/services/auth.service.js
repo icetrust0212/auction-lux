@@ -18,15 +18,10 @@ const login = async (username, password) => {
             .then(data => {
                 console.log('success:', data)
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
-                const username  = {data};
-                const roles = {data};
-                const accessToken = {data};
-                const email = {data};
                 localStorage.clear();
-                const user = {username, roles, email, accessToken};
-                localStorage.setItem('user', JSON.stringify(user));
+                localStorage.setItem('user', JSON.stringify(data));
 
-                return user;
+                return data;
             }, err => {
                 return Promise.reject(JSON.stringify(err.response.data.message));
             });
@@ -52,8 +47,8 @@ const signUp = async (data) => {
             });
         return response;
     } catch (e) {
-        console.log('signup err: ', e.response);
-        return Promise.reject(e.response.data.message);
+        console.log('signup err: ', e, typeof e);
+        return Promise.reject(e);
     }
 }
 
@@ -88,9 +83,28 @@ function handleResponse(response) {
     return data;
 }
 
+const getProfile = async () => {
+    try {
+        let user = JSON.parse(localStorage.getItem('user'));
+        let id = user.id;
+        let response = axios.get(`auth/${id}`)
+            .then(handleResponse)
+            .then(data => {
+                return data.user;
+            }, err => {
+                return Promise.reject(JSON.stringify(err.response.data.message));
+            });
+        return response;
+    } catch (error) {
+        console.log('loginerror: ', error)
+        return Promise.reject(error.response.data.message);
+    };
+}
+
 export const userService = {
     login,
     logout,
     getAll,
-    signUp
+    signUp,
+    getProfile,
 };

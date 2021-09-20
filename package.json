@@ -38,6 +38,7 @@
     "react-router-transition": "^2.1.0",
     "react-scripts": "4.0.3",
     "react-slick-carousel": "^0.14.9",
+    "react-spinners": "^0.11.0",
     "react-step-wizard": "^5.3.9",
     "react-toast-notifications": "^2.5.1",
     "reactjs-popup": "^2.0.5",

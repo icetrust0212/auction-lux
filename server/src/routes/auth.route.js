@@ -15,6 +15,6 @@ router.post(
 );
 
 router.post("/signin", authController.signin);
-
+router.get("/:id", authController.getProfile);
 
 module.exports = router;

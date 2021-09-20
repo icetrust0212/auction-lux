@@ -1,9 +1,13 @@
 import { userConstants } from '../constants';
 
 let user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? {
-  loggedIn: true, user, loggingIn: false, error: ''
-} : {loggedIn: false, user: null, loggingIn: false, error: ''};
+const initialState = user ? 
+{
+  loggedIn: true, user, loggingIn: false, error: '', profile: null, loadingProfile: false
+} : 
+{
+  loggedIn: false, user: null, loggingIn: false, error: ''
+};
 
 export function authentication(state = initialState, {type, payload}) {
   switch (type) {
@@ -57,6 +61,17 @@ export function authentication(state = initialState, {type, payload}) {
         signedUp: false,
         error: payload
       }
+    case userConstants.GET_PROFILE: 
+      return {
+        ...state,
+        profile: payload,
+        loadingProfile: false
+      }
+    case userConstants.PROFILE_LOADING:
+      return {
+        ...state,
+        loadingProfile: payload
+      }
     default:
       return state
   }
@@ -81,4 +96,12 @@ export const getSignedUpState = (state) => {
 
 export const getError = (state) => {
   return state.authentication.error;
+}
+
+export const getProfile = (state) => {
+  return state.authentication.profile;
+}
+
+export const getProfileLoadingState = (state) => {
+  return state.authentication.loadingProfile;
 }

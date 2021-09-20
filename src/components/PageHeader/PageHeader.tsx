@@ -6,7 +6,7 @@ import { userMenu, authMenu } from "../../static/NavPanel";
 import { modalActions, userActions } from "../../store/actions";
 import { getLoggedInState } from "../../store/reducers";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
-import { PencilSquare, Power} from 'react-bootstrap-icons';
+import { PencilSquare, Power } from 'react-bootstrap-icons';
 import "./pageHeader.css";
 import SignOut from "../SignOut/SignOut";
 import { useState } from "react";
@@ -41,7 +41,7 @@ const PageHeader = () => {
           />
 
         </Navbar.Brand>
-        <NavDropdown title=
+        {loggedIn && <NavDropdown title=
           {
             <img className="thumbnail-image"
               src={'/assets/images/no-user.png'}
@@ -50,13 +50,13 @@ const PageHeader = () => {
           } className="color-dark profile-layout-responsive" id="collasible-nav-dropdown" >
           <Link to={'/profile'} className="dropdown-item color-dark" >
             <span>Edit Profile</span>
-            <PencilSquare className="profile-icon"/>
+            <PencilSquare className="profile-icon" />
           </Link>
           <a className="dropdown-item color-dark" onClick={() => showSignoutModalShow(true)}>
             <span>Log Out</span>
-            <Power className="profile-icon"/>
+            <Power className="profile-icon" />
           </a>
-        </NavDropdown>
+        </NavDropdown>}
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav" className="navbar-center">
           <Nav className="me-auto">
@@ -86,11 +86,11 @@ const PageHeader = () => {
               } className="color-dark profile-layout" id="collasible-nav-dropdown" >
               <Link to={'/profile'} className="dropdown-item color-dark" >
                 <span>Edit Profile</span>
-                <PencilSquare className="profile-icon"/>
+                <PencilSquare className="profile-icon" />
               </Link>
               <a className="dropdown-item color-dark" onClick={() => showSignoutModalShow(true)}>
                 <span>Log Out</span>
-                <Power className="profile-icon"/>
+                <Power className="profile-icon" />
               </a>
             </NavDropdown>
           }
@@ -98,7 +98,7 @@ const PageHeader = () => {
         </Navbar.Collapse>
       </Container>
       {
-        loggedIn && <SignOut show={signoutModalShow} onHide={() => showSignoutModalShow(false)}/>
+        loggedIn && <SignOut show={signoutModalShow} onHide={() => showSignoutModalShow(false)} />
       }
     </Navbar>
   )
