@@ -32,6 +32,10 @@ const User = mongoose.model(
     address_street: String,
     postalcode: String,
     phonenumber: String,
+    avatarImage: {
+      data: Buffer,
+      contentType: String
+    }  ,
     roles: [{
       type: mongoose.Schema.Types.ObjectId,
       ref: "Role",

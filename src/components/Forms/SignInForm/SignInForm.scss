@@ -51,6 +51,10 @@
 
       .text-reset {
           text-decoration: none;
+          color: var(--primary-color) !important;
+          &:hover {
+              text-decoration: underline;
+          }
       }
 
       .forgot-password-link {

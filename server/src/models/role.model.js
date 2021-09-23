@@ -5,7 +5,7 @@ const Role = mongoose.model(
     new mongoose.Schema({
         name: {
             type: String,
-            enum: ['ADMIN', 'USER'],
+            enum: ['ADMIN', 'USER', 'VENDOR'],
             default: 'USER',
             unique: true,
             required: true

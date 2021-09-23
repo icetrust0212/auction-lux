@@ -38,7 +38,8 @@ export function authentication(state = initialState, {type, payload}) {
         ...state,
         loggingIn: false,
         loggedIn: false,
-        error: ''
+        error: '',
+        user: null
       };
     case userConstants.SIGNUP_REQUEST:
       return {
@@ -104,4 +105,12 @@ export const getProfile = (state) => {
 
 export const getProfileLoadingState = (state) => {
   return state.authentication.loadingProfile;
+}
+
+export const getUserToken = (state) => {
+  return state.authentication.user;
+}
+
+export const getIsAdmin = (state) => {
+ return state.authentication.user ? state.authentication.user.roles?.indexOf('ADMIN') !== -1 : false;
 }

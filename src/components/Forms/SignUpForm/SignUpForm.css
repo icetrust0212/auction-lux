@@ -62,6 +62,11 @@
 
 .signup-form .text-reset {
   text-decoration: none;
+  color: var(--primary-color) !important;
+}
+
+.signup-form .text-reset:hover {
+  text-decoration: underline;
 }
 
 .signup-form .forgot-password-link {

@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { userMenu, authMenu } from "../../static/NavPanel";
 import { modalActions, userActions } from "../../store/actions";
-import { getLoggedInState } from "../../store/reducers";
+import { getIsAdmin, getLoggedInState } from "../../store/reducers";
 import OnboardingButton from "../common/OnboardingButton/OnboardingButton";
 import { PencilSquare, Power } from 'react-bootstrap-icons';
 import "./pageHeader.css";
@@ -16,6 +16,8 @@ const PageHeader = () => {
   const navPanel = loggedIn ? authMenu : userMenu;
   const dispatch = useDispatch();
   const [signoutModalShow, showSignoutModalShow] = useState(false);
+  const isAdmin = useSelector(state => getIsAdmin(state));
+
   return (
     <Navbar collapseOnSelect expand="lg" variant="light" sticky="top" className="bg-white navbar-auction weight-light">
       <Row className="ad-auction-slot d-flex justify-content-around">
@@ -48,10 +50,12 @@ const PageHeader = () => {
               alt="user pic"
             />
           } className="color-dark profile-layout-responsive" id="collasible-nav-dropdown" >
-          <Link to={'/profile'} className="dropdown-item color-dark" >
-            <span>Edit Profile</span>
-            <PencilSquare className="profile-icon" />
-          </Link>
+          {!isAdmin &&
+            <Link to={'/profile'} className="dropdown-item color-dark" >
+              <span>Edit Profile</span>
+              <PencilSquare className="profile-icon" />
+            </Link>
+          }
           <a className="dropdown-item color-dark" onClick={() => showSignoutModalShow(true)}>
             <span>Log Out</span>
             <Power className="profile-icon" />
@@ -84,10 +88,12 @@ const PageHeader = () => {
                   alt="user pic"
                 />
               } className="color-dark profile-layout" id="collasible-nav-dropdown" >
-              <Link to={'/profile'} className="dropdown-item color-dark" >
-                <span>Edit Profile</span>
-                <PencilSquare className="profile-icon" />
-              </Link>
+              {!isAdmin &&
+                <Link to={'/profile'} className="dropdown-item color-dark" >
+                  <span>Edit Profile</span>
+                  <PencilSquare className="profile-icon" />
+                </Link>
+              }
               <a className="dropdown-item color-dark" onClick={() => showSignoutModalShow(true)}>
                 <span>Log Out</span>
                 <Power className="profile-icon" />

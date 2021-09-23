@@ -35,7 +35,7 @@ const SignInForm = ({handleNotification}: PropsType) => {
         <div className="signin-form">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="form-group">
-                    <label htmlFor="email" className="sr-only">Email</label>
+                    <label htmlFor="email" className="sr-only">Username</label>
 
                     <input
                         {...register("username", { required: true })}
